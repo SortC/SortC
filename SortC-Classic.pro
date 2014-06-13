@@ -23,7 +23,9 @@ SOURCES += main.cpp\
     model/QuickSort.cpp \
     model/SelectionSort.cpp \
     model/stdafx.cpp \
-    model/Step.cpp
+    model/Step.cpp \
+    controller/Controller.cpp \
+    controller/AlgorithmController.cpp
 
 HEADERS  += SortView.h \
     model/Algorithm.h \
@@ -36,6 +38,8 @@ HEADERS  += SortView.h \
     model/SelectionSort.h \
     model/stdafx.h \
     model/Step.h \
-    model/targetver.h
+    model/targetver.h \
+    controller/Controller.h \
+    controller/AlgorithmController.h
 
 FORMS    += SortView.ui

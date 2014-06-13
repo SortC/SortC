@@ -14,6 +14,8 @@
 #include <typeinfo>
 #include <iomanip>
 #include <cstdlib>
+#include "controller/Controller.h"
+#include "controller/AlgorithmController.h"
 //#include <random>
 
 
