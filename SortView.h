@@ -2,6 +2,7 @@
 #define SORTVIEW_H
 
 #include <QMainWindow>
+#include "ui_SortView.h"
 #include "controller/Controller.h"
 
 namespace Ui {
@@ -22,6 +23,7 @@ private slots:
     void on_btnNextStep_clicked();
 
 private:
+    QPushButton **btns;
     Controller *controller;
     Ui::SortView *ui;
     int* startTuple;
