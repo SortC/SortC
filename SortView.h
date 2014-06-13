@@ -23,6 +23,8 @@ private slots:
     void on_btnNextStep_clicked();
 
 private:
+    void handleStep();
+
     QPushButton **btns;
     Controller *controller;
     Ui::SortView *ui;

@@ -37,6 +37,16 @@ SortView::~SortView()
 void SortView::on_btnNextStep_clicked()
 {
     controller->getBubbleSortCtrl()->setNextStep();
+    handleStep();
+}
+
+void SortView::on_btnPrevStep_clicked()
+{
+    controller->getBubbleSortCtrl()->setPrevStep();
+    handleStep();
+}
+
+void SortView::handleStep() {
     ui->lblExplanation->setText(QString::fromStdString(controller->getBubbleSortCtrl()->getCurrentStep()->toString()));
     ui->lcdNumActStep->display(controller->getBubbleSortCtrl()->getCurrentStep()->getNumber());
     for(int i = 0; i < numbOfValues; i++) {
@@ -47,22 +57,14 @@ void SortView::on_btnNextStep_clicked()
     val2 = controller->getBubbleSortCtrl()->getCurrentStep()->getSecondValue();
     btns[val1]->setStyleSheet("background-color: rgb(0, 0, 255); color: rgb(255, 255, 255)");
     btns[val2]->setStyleSheet("background-color: rgb(0, 0, 255); color: rgb(255, 255, 255)");
-   /* switch (controller->getBubbleSortCtrl()->getCurrentStep()->getOperation()) {
-    case COMP:
+
+    switch (controller->getBubbleSortCtrl()->getCurrentStep()->getOperation()) {
+    case Step::COMP:
         break;
-    case SWAP:
-            QPushButton tmp = btns[val2];
-            btns[val2] = btns[val1];
-            btns[val1] = tmp;
+    case Step::SWAP:
+
         break;
     default:
         break;
-    }*/
-}
-x1
-void SortView::on_btnPrevStep_clicked()
-{
-    controller->getBubbleSortCtrl()->setPrevStep();
-    ui->lblExplanation->setText(QString::fromStdString(controller->getBubbleSortCtrl()->getCurrentStep()->toString()));
-    ui->lcdNumActStep->display(controller->getBubbleSortCtrl()->getCurrentStep()->getNumber());
+    }
 }
