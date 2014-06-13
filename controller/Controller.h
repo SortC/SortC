@@ -12,13 +12,15 @@ public:
     Controller(int *startTuple, int numbOfValues);
     Controller(int numbOfValues);
 
-    AlgorithmController* bubbleSortCtrl;
 
+
+
+    AlgorithmController *getBubbleSortCtrl() const;
 
 private:
     int* startTuple;
     int numbOfValues;
-
+    AlgorithmController* bubbleSortCtrl;
 
 };
 

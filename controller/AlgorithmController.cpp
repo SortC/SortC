@@ -13,13 +13,19 @@ AlgorithmController::~AlgorithmController()
 
 void AlgorithmController::setNextStep()
 {
-    currentStep = algo->getNextStep();
+    Step* buffer = algo->getNextStep();
+    if(buffer){
+        currentStep = buffer;
+    }
 }
 
 
 void AlgorithmController::setPrevStep()
 {
-     currentStep = algo->getPrevStep();
+    Step* buffer = algo->getPrevStep();
+    if(buffer){
+        currentStep = buffer;
+    }
 }
 
 Step* AlgorithmController::getCurrentStep() const

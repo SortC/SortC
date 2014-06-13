@@ -112,7 +112,7 @@
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_3">
               <item>
-               <widget class="QPushButton" name="btnNexStep">
+               <widget class="QPushButton" name="btnPrevStep">
                 <property name="text">
                  <string>&lt;</string>
                 </property>
@@ -126,7 +126,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="btnPrevStep">
+               <widget class="QPushButton" name="btnNextStep">
                 <property name="text">
                  <string>&gt;</string>
                 </property>

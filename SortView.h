@@ -17,6 +17,10 @@ public:
 
     ~SortView();
 
+private slots:
+    void on_btnPrevStep_clicked();
+    void on_btnNextStep_clicked();
+
 private:
     Controller *controller;
     Ui::SortView *ui;

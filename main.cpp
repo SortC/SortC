@@ -102,6 +102,7 @@ void testAlgorithm(Algorithm* algo) {
         counter[i] = 0;
     }
     do{
+        if(currStep) {
         cout << currStep->toString();
         switch (currStep->getOperation())
         {
@@ -144,6 +145,7 @@ void testAlgorithm(Algorithm* algo) {
             break;
         }
         currStep = algo->getNextStep();
+        }
     }while(currStep != NULL);
 
     cout << "\nBenoetigte Schritte: " << algo->getNumbOfSteps()<<endl;
@@ -161,17 +163,20 @@ void testAlgorithm(Algorithm* algo) {
 
 int main(int argc, char *argv[])
 {
+    /*
     cout << "Testreihe mit " << ANZWERTE << " Werten" << endl;
     cout << setw(LINEWIDTH) << setfill(FILLCHAR) << endl;
 
     // Test des BubbleSort
     //testAlgorithm(new BubbleSort(ANZWERTE));
+    */
     int zahlen[ANZWERTE];
 
     for (int i = 0 ; i<ANZWERTE;i++){
         zahlen[i] = ANZWERTE - i;
     }
     zahlen[3]= zahlen[1];
+    /*
     const int width = 50;
     cout << setw(width) << setfill('#') << "" << endl;
     cout << left <<setfill(' ') << setw(width-1) <<"#  Beginne Testreihe 1" << "#" << endl;
@@ -198,9 +203,9 @@ int main(int argc, char *argv[])
     testAlgorithm(new SelectionSort(zahlen,ANZWERTE));
     testAlgorithm(new InsertionSort(zahlen,ANZWERTE));
     cout << "\nBitte beliebige Taste druecken zum fortfahren" << endl;
-
+*/
     testAlgorithm(new BubbleSort(zahlen,ANZWERTE));
-    testAlgorithm(new BucketSort(zahlen,ANZWERTE));
+/*    testAlgorithm(new BucketSort(zahlen,ANZWERTE));
     cout << "\nBitte beliebige Taste druecken zum fortfahren" << endl;
 
     testAlgorithm(new HeapSort(zahlen, ANZWERTE));
@@ -247,7 +252,7 @@ int main(int argc, char *argv[])
     cout << left <<setfill(' ') << setw(width-1) <<"#  E N D E" << "#" << endl;
     cout << setw(width) << setfill('#') << "" << endl;
 
-
+    */
 
     QApplication a(argc, argv);
     SortView *w = new SortView(0, zahlen ,ANZWERTE);

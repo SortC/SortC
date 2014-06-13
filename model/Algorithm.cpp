@@ -30,7 +30,7 @@ Algorithm::Algorithm(int numbOfValues)
 		this->startTuple[i] = this->currentTuple[i];
 	}
 
-	this->numbOfCurrentStep = 0;
+    this->numbOfCurrentStep = -1;
     this->numbOfSteps = 0;
 	this->isSorted = false;
 }
@@ -54,12 +54,14 @@ void Algorithm::doSort(){
 }
 
 Step* Algorithm::getNextStep() {
-    if(numbOfSteps == 0)
-		doSort();
-	if (numbOfCurrentStep < numbOfSteps)
+    doSort();
+    if (numbOfCurrentStep < numbOfSteps -1)
     {
-        return steps[numbOfCurrentStep++];
+        return steps[++numbOfCurrentStep];
 	}
+    else if(numbOfCurrentStep < 0){
+        return steps[++numbOfCurrentStep];
+    }
 	else
 	{
 		return NULL;
@@ -67,10 +69,14 @@ Step* Algorithm::getNextStep() {
 }
 
 Step* Algorithm::getPrevStep() {
-    if ((numbOfCurrentStep > 0) | (numbOfSteps == 0))
+    doSort();
+    if (numbOfCurrentStep > 0)
     {
-        return steps[numbOfCurrentStep--];
+        return steps[--numbOfCurrentStep];
 	}
+    else if(numbOfCurrentStep == 0) {
+        return steps[numbOfCurrentStep];
+    }
 	else
 	{
 		return NULL;
