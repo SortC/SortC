@@ -11,17 +11,12 @@ class Controller
 public:
     Controller(int *startTuple, int numbOfValues);
     Controller(int numbOfValues);
-
-
-
-
     AlgorithmController *getBubbleSortCtrl() const;
 
 private:
     int* startTuple;
     int numbOfValues;
     AlgorithmController* bubbleSortCtrl;
-
 };
 
 #endif // CONTROLLER_H

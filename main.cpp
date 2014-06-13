@@ -19,7 +19,7 @@
 //#include <random>
 
 
-#define ANZWERTE 5
+#define ANZWERTE 35
 #define LINEWIDTH 40
 const char FILLCHAR = '-';
 

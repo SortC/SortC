@@ -2,7 +2,7 @@
 #include "ui_SortView.h"
 #include <QColorDialog>
 
-#include "model/Step.h"
+
 
 const int FACTOR = 10;
 
@@ -13,6 +13,7 @@ SortView::SortView(QWidget *parent, int* startTuple, int numbOfValues) :
     this->startTuple = new int[numbOfValues];
 
     btns = new QPushButton*[numbOfValues];
+
     for (int i = 0; i < numbOfValues; i++)
     {
         this->startTuple[i] = startTuple[i];
@@ -20,11 +21,10 @@ SortView::SortView(QWidget *parent, int* startTuple, int numbOfValues) :
         btn->setText(QString::number(startTuple[i]));
         btn->setAutoFillBackground(true);
         btn->setStyleSheet("background-color: rgb(255, 0, 0); color: rgb(255, 255, 255)");
-        btn->setMinimumHeight(startTuple[i]*10);
-        ui->horLayoutSorting->addWidget(btn);
+        btn->setMinimumHeight(startTuple[i]*4);
+        ui->horLayoutSorting->addWidget(btn,0,Qt::AlignBottom);
         btns[i] = btn;
     }
-    this->startTuple = startTuple;
     this->numbOfValues = numbOfValues;
     controller = new Controller(startTuple, numbOfValues);
 }
@@ -55,14 +55,15 @@ void SortView::handleStep() {
     int val1, val2;
     val1 = controller->getBubbleSortCtrl()->getCurrentStep()->getFirstValue();
     val2 = controller->getBubbleSortCtrl()->getCurrentStep()->getSecondValue();
-    btns[val1]->setStyleSheet("background-color: rgb(0, 0, 255); color: rgb(255, 255, 255)");
-    btns[val2]->setStyleSheet("background-color: rgb(0, 0, 255); color: rgb(255, 255, 255)");
-
     switch (controller->getBubbleSortCtrl()->getCurrentStep()->getOperation()) {
     case Step::COMP:
+        btns[val1]->setStyleSheet("background-color: rgb(0, 0, 255); color: rgb(255, 255, 255)");
+        btns[val2]->setStyleSheet("background-color: rgb(0, 0, 255); color: rgb(255, 255, 255)");
+
         break;
     case Step::SWAP:
-
+        btns[val1]->setStyleSheet("background-color: rgb(0, 255, 0); color: rgb(255, 255, 255)");
+        btns[val2]->setStyleSheet("background-color: rgb(0, 255, 0); color: rgb(255, 255, 255)");
         break;
     default:
         break;
