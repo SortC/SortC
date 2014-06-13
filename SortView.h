@@ -2,6 +2,7 @@
 #define SORTVIEW_H
 
 #include <QMainWindow>
+#include "controller/Controller.h"
 
 namespace Ui {
 class SortView;
@@ -17,6 +18,7 @@ public:
     ~SortView();
 
 private:
+    Controller *controller;
     Ui::SortView *ui;
     int* startTuple;
     int numbOfValues;

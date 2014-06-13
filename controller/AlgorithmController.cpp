@@ -7,7 +7,7 @@ AlgorithmController::AlgorithmController(Algorithm* algo)
 
 AlgorithmController::~AlgorithmController()
 {
-    //delete algo;
+    delete algo;
 }
 
 

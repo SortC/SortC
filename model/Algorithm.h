@@ -27,7 +27,7 @@ public:
 	/**
 	* Destruktor
 	*/
-	~Algorithm();
+    virtual ~Algorithm();
 
 	/** 
 	* Startet die Sortierung

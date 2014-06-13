@@ -3,6 +3,8 @@
 
 #include "AlgorithmController.h"
 #include "model/BubbleSort.h"
+#include <cstdlib>
+#include <time.h>
 
 class Controller
 {
