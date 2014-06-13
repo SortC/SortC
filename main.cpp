@@ -245,9 +245,11 @@ int main(int argc, char *argv[])
     cout << left <<setfill(' ') << setw(width-1) <<"#  E N D E" << "#" << endl;
     cout << setw(width) << setfill('#') << "" << endl;
 
+
+
     QApplication a(argc, argv);
-    SortView w;
-    w.show();
+    SortView *w = new SortView(0, zahlen ,ANZWERTE);
+    w->show();
 
     return a.exec();
 }
