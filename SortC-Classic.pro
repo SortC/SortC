@@ -13,7 +13,7 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        SortView.cpp \
+    view/SortView.cpp \
     model/Algorithm.cpp \
     model/BubbleSort.cpp \
     model/BucketSort.cpp \
@@ -27,7 +27,7 @@ SOURCES += main.cpp\
     controller/Controller.cpp \
     controller/AlgorithmController.cpp
 
-HEADERS  += SortView.h \
+HEADERS  += view/SortView.h \
     model/Algorithm.h \
     model/BubbleSort.h \
     model/BucketSort.h \
@@ -42,4 +42,4 @@ HEADERS  += SortView.h \
     controller/Controller.h \
     controller/AlgorithmController.h
 
-FORMS    += SortView.ui
+FORMS    += view/SortView.ui

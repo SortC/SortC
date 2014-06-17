@@ -1,5 +1,7 @@
-#include "SortView.h"
 #include <QApplication>
+#include "view/SortView.h"
+
+//Fuer die Tests
 #include "model/stdafx.h"
 #include "model/BubbleSort.h"
 #include "model/MergeSort.h"
@@ -14,18 +16,12 @@
 #include <typeinfo>
 #include <iomanip>
 #include <cstdlib>
-#include "controller/Controller.h"
-#include "controller/AlgorithmController.h"
-//#include <random>
-
 
 #define ANZWERTE 35
 #define LINEWIDTH 40
 const char FILLCHAR = '-';
 
 using namespace std;
-
-
 
 void printBuckets(queue<int> *buckets, int numbOfValues)
 {
