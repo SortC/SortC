@@ -169,12 +169,7 @@ int main(int argc, char *argv[])
     // Test des BubbleSort
     //testAlgorithm(new BubbleSort(ANZWERTE));
     */
-    int zahlen[ANZWERTE];
 
-    for (int i = 0 ; i<ANZWERTE;i++){
-        zahlen[i] = ANZWERTE - i;
-    }
-    zahlen[3]= zahlen[1];
     /*
     const int width = 50;
     cout << setw(width) << setfill('#') << "" << endl;
@@ -203,7 +198,7 @@ int main(int argc, char *argv[])
     testAlgorithm(new InsertionSort(zahlen,ANZWERTE));
     cout << "\nBitte beliebige Taste druecken zum fortfahren" << endl;
 */
-    testAlgorithm(new BubbleSort(zahlen,ANZWERTE));
+
 /*    testAlgorithm(new BucketSort(zahlen,ANZWERTE));
     cout << "\nBitte beliebige Taste druecken zum fortfahren" << endl;
 
@@ -258,13 +253,16 @@ int main(int argc, char *argv[])
     ConfiguratorView* configuratorView = new ConfiguratorView(0);
     configuratorView->show();
 
-    SortView* sortView = new SortView(0, zahlen ,ANZWERTE);
-    sortView->show();
+    //SortView* sortView = new SortView(0, zahlen ,ANZWERTE);
+    //sortView->hide();
+
+    //testAlgorithm(new BubbleSort(configuratorView->getZahlen(),configuratorView->getAnzWerte()));
 
     int returnValue = a.exec();
 
     delete configuratorView;
-    delete sortView;
+    //delete sortView;
 
     return returnValue;
 }
+
