@@ -19,12 +19,12 @@ BaseSortWidget::~BaseSortWidget()
 
 void BaseSortWidget::on_btnNextStep_clicked()
 {
-    algoCtrl->setNextStep();
+    //parent->controller->getBubbleSortCtrl()->setNextStep();
     //handleStep();
 }
 
 void BaseSortWidget::on_btnPrevStep_clicked()
 {
-    algoCtrl->setPrevStep();
+    //parent->controller->getBubbleSortCtrl()->setPrevStep();
     //handleStep();
 }

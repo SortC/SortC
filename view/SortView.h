@@ -6,10 +6,7 @@
 #include <QHBoxLayout>
 #include "ui_SortView.h"
 #include "controller/Controller.h"
-#include "view/BubbleSortWidget.h"
-
-//toDo entfernen, wird nur als dummy benutzt
-#include "view/EmptySortWidget.h"
+#include "view/BaseSortWidget.h"
 
 namespace Ui {
 class SortView;
