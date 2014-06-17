@@ -53,8 +53,13 @@ void SortView::handleStep() {
         btns[i]->setStyleSheet("background-color: rgb(255, 0, 0); color: rgb(255, 255, 255)");
     }
     int val1, val2;
+
     val1 = controller->getBubbleSortCtrl()->getCurrentStep()->getFirstValue();
     val2 = controller->getBubbleSortCtrl()->getCurrentStep()->getSecondValue();
+
+    QString tempText = btns[val1]->text();
+    int tempHeight = btns[val1]->size().height();
+
     switch (controller->getBubbleSortCtrl()->getCurrentStep()->getOperation()) {
     case Step::COMP:
         btns[val1]->setStyleSheet("background-color: rgb(0, 0, 255); color: rgb(255, 255, 255)");
@@ -64,6 +69,12 @@ void SortView::handleStep() {
     case Step::SWAP:
         btns[val1]->setStyleSheet("background-color: rgb(0, 255, 0); color: rgb(255, 255, 255)");
         btns[val2]->setStyleSheet("background-color: rgb(0, 255, 0); color: rgb(255, 255, 255)");
+
+        btns[val1]->setMinimumHeight(btns[val2]->size().height());
+        btns[val2]->setMinimumHeight(tempHeight);
+        btns[val1]->setText(btns[val2]->text());
+        btns[val2]->setText(tempText);
+
         break;
     default:
         break;
