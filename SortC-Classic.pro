@@ -26,7 +26,8 @@ SOURCES += main.cpp\
     model/Step.cpp \
     controller/Controller.cpp \
     controller/AlgorithmController.cpp \
-    view/ConfiguratorView.cpp
+    view/ConfiguratorView.cpp \
+    view/BaseSortWidget.cpp
 
 HEADERS  += view/SortView.h \
     model/Algorithm.h \
@@ -42,7 +43,9 @@ HEADERS  += view/SortView.h \
     model/targetver.h \
     controller/Controller.h \
     controller/AlgorithmController.h \
-    view/ConfiguratorView.h
+    view/ConfiguratorView.h \
+    view/BaseSortWidget.h
 
 FORMS    += view/SortView.ui \
-    view/ConfiguratorView.ui
+    view/ConfiguratorView.ui \
+    view/BaseSortWidget.ui
