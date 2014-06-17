@@ -2,9 +2,11 @@
 #define SORTVIEW_H
 
 #include <QMainWindow>
-#include <QPushButton>
+#include <QColorDialog>
+#include <QHBoxLayout>
 #include "ui_SortView.h"
 #include "controller/Controller.h"
+#include "view/BaseSortWidget.h"
 
 namespace Ui {
 class SortView;
@@ -19,14 +21,10 @@ public:
 
     ~SortView();
 
-private slots:
-    void on_btnPrevStep_clicked();
-    void on_btnNextStep_clicked();
-
 private:
-    void handleStep();
+    //void handleStep();
+    void addTabs();
 
-    QPushButton **btns;
     Controller *controller;
     Ui::SortView *ui;
     int* startTuple;

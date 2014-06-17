@@ -29,56 +29,17 @@
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QTabWidget" name="tabWidgetAlgorithms">
-      <property name="currentIndex">
-       <number>2</number>
-      </property>
-      <property name="documentMode">
-       <bool>false</bool>
-      </property>
-      <property name="tabsClosable">
-       <bool>false</bool>
-      </property>
-      <property name="movable">
-       <bool>false</bool>
-      </property>
-      <widget class="BaseSortWidget" name="bubbleSortTab">
+     <widget class="QTabWidget" name="tabWidget">
+      <widget class="QWidget" name="tab">
        <attribute name="title">
-        <string>BubbleSort</string>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_2"/>
-      </widget>
-      <widget class="BaseSortWidget" name="insertionSortTab">
-       <attribute name="title">
-        <string>InsertionSort</string>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_4"/>
-      </widget>
-      <widget class="BaseSortWidget" name="selectionSortTab">
-       <attribute name="title">
-        <string>SelectionSort</string>
+        <string>Tab 1</string>
        </attribute>
       </widget>
-      <widget class="BaseSortWidget" name="quickSortTab">
+      <widget class="QWidget" name="tab_2">
        <attribute name="title">
-        <string>QuickSort</string>
-       </attribute>
-      </widget>
-      <widget class="BaseSortWidget" name="mergeSortTab">
-       <attribute name="title">
-        <string>MergeSort</string>
-       </attribute>
-      </widget>
-      <widget class="BaseSortWidget" name="bucketSortTab">
-       <attribute name="title">
-        <string>BucketSort</string>
-       </attribute>
-      </widget>
-      <widget class="BaseSortWidget" name="heapSortTab">
-       <attribute name="title">
-        <string>HeapSort</string>
+        <string>Tab 2</string>
        </attribute>
       </widget>
      </widget>
@@ -88,14 +49,6 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>BaseSortWidget</class>
-   <extends>QWidget</extends>
-   <header location="global">view/BaseSortWidget.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

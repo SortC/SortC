@@ -1,6 +1,7 @@
 #include "SortView.h"
 #include "ui_SortView.h"
 #include <QColorDialog>
+#include <QString>
 
 
 
@@ -10,8 +11,8 @@ SortView::SortView(QWidget *parent, int* startTuple, int numbOfValues) :
     QMainWindow(parent),
     ui(new Ui::SortView){
     ui->setupUi(this);
-/*    this->startTuple = new int[numbOfValues];
-
+    this->startTuple = new int[numbOfValues];
+/*
     btns = new QPushButton*[numbOfValues];
 
     for (int i = 0; i < numbOfValues; i++)
@@ -28,6 +29,7 @@ SortView::SortView(QWidget *parent, int* startTuple, int numbOfValues) :
     */
     this->numbOfValues = numbOfValues;
     controller = new Controller(startTuple, numbOfValues);
+    addTabs();
 }
 
 SortView::~SortView()
@@ -35,19 +37,19 @@ SortView::~SortView()
     delete ui;
 }
 
-void SortView::on_btnNextStep_clicked()
-{
-    controller->getBubbleSortCtrl()->setNextStep();
-    handleStep();
+void SortView::addTabs(){
+    ui->tabWidget->clear();
+    QWidget* bsWidget = new BaseSortWidget(ui->tabWidget, controller->getBubbleSortCtrl(),startTuple,numbOfValues);
+    ui->tabWidget->addTab(bsWidget ,QString("BubbleSort"));
+
+    QWidget* isWidget = new BaseSortWidget(ui->tabWidget, controller->getBubbleSortCtrl(),startTuple,numbOfValues);
+    ui->tabWidget->addTab(isWidget ,QString("InsertionSort"));
+
+    QWidget* ssWidget = new BaseSortWidget(ui->tabWidget, controller->getBubbleSortCtrl(),startTuple,numbOfValues);
+    ui->tabWidget->addTab(ssWidget ,QString("SelectionSort"));
 }
 
-void SortView::on_btnPrevStep_clicked()
-{
-    controller->getBubbleSortCtrl()->setPrevStep();
-    handleStep();
-}
-
-void SortView::handleStep() {
+//void SortView::handleStep() {
     /*
     ui->lblExplanation->setText(QString::fromStdString(controller->getBubbleSortCtrl()->getCurrentStep()->toString()));
     ui->lcdNumActStep->display(controller->getBubbleSortCtrl()->getCurrentStep()->getNumber());
@@ -82,4 +84,4 @@ void SortView::handleStep() {
         break;
     }
     */
-}
+//}
