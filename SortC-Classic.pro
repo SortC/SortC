@@ -25,7 +25,8 @@ SOURCES += main.cpp\
     model/stdafx.cpp \
     model/Step.cpp \
     controller/Controller.cpp \
-    controller/AlgorithmController.cpp
+    controller/AlgorithmController.cpp \
+    view/ConfiguratorView.cpp
 
 HEADERS  += view/SortView.h \
     model/Algorithm.h \
@@ -40,6 +41,8 @@ HEADERS  += view/SortView.h \
     model/Step.h \
     model/targetver.h \
     controller/Controller.h \
-    controller/AlgorithmController.h
+    controller/AlgorithmController.h \
+    view/ConfiguratorView.h
 
-FORMS    += view/SortView.ui
+FORMS    += view/SortView.ui \
+    view/ConfiguratorView.ui

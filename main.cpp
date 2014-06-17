@@ -1,7 +1,10 @@
 #include <QApplication>
 #include "view/SortView.h"
 
-//Fuer die Tests
+//Nur zu Testzwecken
+#include "view/ConfiguratorView.h"
+
+//Fuer die Testfaelle
 #include "model/stdafx.h"
 #include "model/BubbleSort.h"
 #include "model/MergeSort.h"
@@ -251,8 +254,17 @@ int main(int argc, char *argv[])
     */
 
     QApplication a(argc, argv);
-    SortView *w = new SortView(0, zahlen ,ANZWERTE);
-    w->show();
 
-    return a.exec();
+    ConfiguratorView* configuratorView = new ConfiguratorView(0);
+    configuratorView->show();
+
+    SortView* sortView = new SortView(0, zahlen ,ANZWERTE);
+    sortView->show();
+
+    int returnValue = a.exec();
+
+    delete configuratorView;
+    delete sortView;
+
+    return returnValue;
 }
