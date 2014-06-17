@@ -10,7 +10,7 @@ SortView::SortView(QWidget *parent, int* startTuple, int numbOfValues) :
     QMainWindow(parent),
     ui(new Ui::SortView){
     ui->setupUi(this);
-    this->startTuple = new int[numbOfValues];
+/*    this->startTuple = new int[numbOfValues];
 
     btns = new QPushButton*[numbOfValues];
 
@@ -25,6 +25,7 @@ SortView::SortView(QWidget *parent, int* startTuple, int numbOfValues) :
         ui->horLayoutSorting->addWidget(btn,0,Qt::AlignBottom);
         btns[i] = btn;
     }
+    */
     this->numbOfValues = numbOfValues;
     controller = new Controller(startTuple, numbOfValues);
 }
@@ -47,6 +48,7 @@ void SortView::on_btnPrevStep_clicked()
 }
 
 void SortView::handleStep() {
+    /*
     ui->lblExplanation->setText(QString::fromStdString(controller->getBubbleSortCtrl()->getCurrentStep()->toString()));
     ui->lcdNumActStep->display(controller->getBubbleSortCtrl()->getCurrentStep()->getNumber());
     for(int i = 0; i < numbOfValues; i++) {
@@ -79,4 +81,5 @@ void SortView::handleStep() {
     default:
         break;
     }
+    */
 }

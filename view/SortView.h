@@ -2,6 +2,7 @@
 #define SORTVIEW_H
 
 #include <QMainWindow>
+#include <QPushButton>
 #include "ui_SortView.h"
 #include "controller/Controller.h"
 
