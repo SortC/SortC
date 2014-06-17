@@ -21,7 +21,7 @@ private slots:
     void on_btnPrevStep_clicked();
     void on_btnNextStep_clicked();
 
-private:
+protected:
     QWidget *parent;
     AlgorithmController* algoCtrl;
     int* startTuple;
