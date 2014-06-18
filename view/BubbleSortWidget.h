@@ -15,6 +15,7 @@ signals:
 public slots:
 
 private:
+    void handleStep();
     QPushButton** displayValues;
 };
 

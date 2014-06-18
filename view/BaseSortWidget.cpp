@@ -33,5 +33,6 @@ void BaseSortWidget::on_btnPrevStep_clicked()
 }
 
 void BaseSortWidget::handleStep(){
-
+    ui->lblExplanation->setText(QString::fromStdString(algoCtrl->getCurrentStep()->toString()));
+    ui->lcdNumActStep->display(algoCtrl->getCurrentStep()->getNumber());
 }
