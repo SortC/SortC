@@ -15,6 +15,8 @@ BubbleSortWidget::BubbleSortWidget(QWidget *parent, AlgorithmController* algoCtr
         ui->horLayoutSorting->addWidget(newValue,0,Qt::AlignBottom);
         displayValues[i] = newValue;
     }
+
+    handleStep();
 }
 
 void BubbleSortWidget::handleStep(){

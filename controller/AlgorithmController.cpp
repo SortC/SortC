@@ -3,6 +3,7 @@
 AlgorithmController::AlgorithmController(Algorithm* algo)
 {
     this->algo = algo;
+    setPrevStep();
 }
 
 AlgorithmController::~AlgorithmController()
