@@ -7,6 +7,6 @@ public:
 	SelectionSort(int* values, int numbOfValues);
 	SelectionSort(int numbOfValues);
 	~SelectionSort(void);
-    void sort();
+	void sort() override;
 };
 

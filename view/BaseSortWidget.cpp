@@ -23,15 +23,11 @@ BaseSortWidget::~BaseSortWidget()
 void BaseSortWidget::on_btnNextStep_clicked()
 {
     algoCtrl->setNextStep();
-    handleStep();
+    //handleStep();
 }
 
 void BaseSortWidget::on_btnPrevStep_clicked()
 {
     algoCtrl->setPrevStep();
-    handleStep();
-}
-
-void BaseSortWidget::handleStep(){
-
+    //handleStep();
 }

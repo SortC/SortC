@@ -9,7 +9,7 @@ public:
 	BucketSort(int* values, int numbOfValues);
 	BucketSort(int numbOfValues);
 	~BucketSort(void);
-    void sort();
+	void sort() override;
 	queue<int>* getFilledBuckets(){return filledBuckets;};
 protected:
 	int hash(int n);

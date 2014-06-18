@@ -7,6 +7,6 @@ public:
 	InsertionSort(int* values, int numbOfValues);
 	InsertionSort(int numbOfValues);
 	~InsertionSort(void);
-    void sort();
+	void sort() override;
 };
 

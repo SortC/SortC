@@ -7,7 +7,7 @@ public:
 	HeapSort(int* values, int numbOfValues);
 	HeapSort(int numbOfValues);
 	~HeapSort(void);
-    void sort();
+	void sort() override;
 
 private:
 	void shiftRight(int low, int high);
