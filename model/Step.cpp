@@ -40,6 +40,8 @@ string Step::toString(){
 			break;
         case MIN: buffer << setw(lengthOp) << left << "MIN" << setfill(filler) << setw(length) << left  <<"Setzt" << "[" << firstValue << "] als kleinstes Element";
 			break;
+        case END: buffer << "Fertig Sortiert";
+            break;
 		default:
 			break;
 		}

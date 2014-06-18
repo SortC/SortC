@@ -11,7 +11,7 @@ using namespace std;
 class Step
 {
 public:
-    enum Operation {SWAP, COMP, MARK, PIVOT, CPY, R_CPY, MIN };
+    enum Operation {SWAP, COMP, MARK, PIVOT, CPY, R_CPY, MIN, END};
     Step(int firstValue, int secondValue, Operation operation, unsigned int number, string explanation);
 
 	Step(int firstValue, int secondValue, Operation operation, unsigned int number);
@@ -27,10 +27,10 @@ public:
 	/**
 	* Getter-Funktionen
 	*/
-	Operation getOperation() { return op; };
-	int getNumber(){ return number; };
-	int getFirstValue(){ return firstValue; };
-	int getSecondValue(){ return secondValue; };
+    Operation getOperation() { return op; }
+    int getNumber(){ return number; }
+    int getFirstValue(){ return firstValue; }
+    int getSecondValue(){ return secondValue; }
 protected:
 	int firstValue;
 	int secondValue;

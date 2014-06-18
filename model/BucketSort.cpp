@@ -79,9 +79,11 @@ void BucketSort::sort()
 			//cout << "| ";
 		}
 	}
+
+
 	// clear buckets.
 	/*for ( int i = 0; i < numbOfValues; i++ )
 	delete buckets[i];
 	*/
-
+    steps.push_back(new Step(0,0,Step::END,++numbOfSteps));
 }

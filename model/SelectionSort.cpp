@@ -43,4 +43,5 @@ void SelectionSort::sort()
 			currentTuple[i] = tmp;
 		}
 	}
+    steps.push_back(new Step(0,0,Step::END,++numbOfSteps));
 }

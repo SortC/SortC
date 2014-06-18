@@ -36,6 +36,7 @@ void BubbleSort::sort()
 				currentTuple[j + 1] = tmp;
 			}
 		}
-	}
+    }
 
+    steps.push_back(new Step(0,0,Step::END,++numbOfSteps));
 }

@@ -39,4 +39,5 @@ void InsertionSort::sort()
 
 		}while (j > 0 && currentTuple[j - 1] > currentTuple[j]);
 	}
+    steps.push_back(new Step(0,0,Step::END,++numbOfSteps));
 }

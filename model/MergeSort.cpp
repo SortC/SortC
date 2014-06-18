@@ -17,6 +17,7 @@ MergeSort::~MergeSort(void)
 
 void MergeSort::sort(){
 	merge_sort(currentTuple,helperArray,0,numbOfValues-1);
+    steps.push_back(new Step(0,0,Step::END,++numbOfSteps));
 }
 
 void MergeSort::merge_sort(int *a, int*b, int low, int high)

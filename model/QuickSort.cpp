@@ -38,6 +38,7 @@ void QuickSort::sort(){
 		if(pivot + 1 < right)
 			list.push_back(std::pair<int, int>(pivot + 1, right));
 	}
+    steps.push_back(new Step(0,0,Step::END,++numbOfSteps));
 }
 
 int QuickSort::partition(int a[], int left, int right)

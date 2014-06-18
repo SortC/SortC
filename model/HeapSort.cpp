@@ -85,5 +85,6 @@ void HeapSort::sort()
         /*Ensure heap property on remaining elements*/
         shiftRight(0, high);
     }
+    steps.push_back(new Step(0,0,Step::END,++numbOfSteps));
     return;
 }

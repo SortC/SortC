@@ -27,12 +27,18 @@ BaseSortWidget::~BaseSortWidget()
 void BaseSortWidget::on_btnNextStep_clicked()
 {
     algoCtrl->setNextStep();
+    if(!timer->isActive())
+        ui->btnPrevStep->setEnabled(true);
     handleStep();
 }
 
 void BaseSortWidget::on_btnPrevStep_clicked()
 {
     algoCtrl->setPrevStep();
+    if(algoCtrl->getCurrentStep()->getNumber() == 1)
+        ui->btnPrevStep->setEnabled(false);
+    ui->btnNextStep->setEnabled(true);
+    ui->btnPlayPause->setEnabled(true);
     handleStep();
 }
 

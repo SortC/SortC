@@ -46,6 +46,10 @@ void BubbleSortWidget::handleStep(){
         displayValues[val2]->setText(tempText);
 
         break;
+    case Step::END:
+        ui->btnPlayPause->setChecked(false);
+        ui->btnNextStep->setEnabled(false);
+        ui->btnPlayPause->setEnabled(false);
     default:
         break;
     }
