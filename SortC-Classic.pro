@@ -27,13 +27,13 @@ SOURCES += main.cpp\
     controller/Controller.cpp \
     controller/AlgorithmController.cpp \
     view/ConfiguratorView.cpp \
-    view/BaseSortWidget.cpp \
-    view/BubbleSortWidget.cpp \
-    view/EmptySortWidget.cpp \
-    view/SelectionSortwidget.cpp \
-    view/InsertionSortWidget.cpp \
-    view/MergeSortWidget.cpp \
-    view/QuickSortWidget.cpp
+    view/widgets/BaseSortWidget.cpp \
+    view/widgets/BubbleSortWidget.cpp \
+    view/widgets/EmptySortWidget.cpp \
+    view/widgets/InsertionSortWidget.cpp \
+    view/widgets/MergeSortWidget.cpp \
+    view/widgets/QuickSortWidget.cpp \
+    view/widgets/SelectionSortwidget.cpp
 
 HEADERS  += view/SortView.h \
     model/Algorithm.h \
@@ -50,14 +50,14 @@ HEADERS  += view/SortView.h \
     controller/Controller.h \
     controller/AlgorithmController.h \
     view/ConfiguratorView.h \
-    view/BaseSortWidget.h \
-    view/BubbleSortWidget.h \
-    view/EmptySortWidget.h \
-    view/SelectionSortWidget.h \
-    view/InsertionSortWidget.h \
-    view/MergeSortWidget.h \
-    view/QuickSortWidget.h
+    view/widgets/BaseSortWidget.h \
+    view/widgets/BubbleSortWidget.h \
+    view/widgets/EmptySortWidget.h \
+    view/widgets/InsertionSortWidget.h \
+    view/widgets/MergeSortWidget.h \
+    view/widgets/QuickSortWidget.h \
+    view/widgets/SelectionSortWidget.h
 
 FORMS    += view/SortView.ui \
     view/ConfiguratorView.ui \
-    view/BaseSortWidget.ui
+    view/widgets/BaseSortWidget.ui

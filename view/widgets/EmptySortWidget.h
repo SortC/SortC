@@ -1,7 +1,7 @@
 #ifndef EMPTYSORTWIDGET_H
 #define EMPTYSORTWIDGET_H
 
-#include "view/BaseSortWidget.h"
+#include "view/widgets/BaseSortWidget.h"
 
 class EmptySortWidget : public BaseSortWidget
 {

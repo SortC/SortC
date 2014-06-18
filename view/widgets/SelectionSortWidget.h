@@ -1,7 +1,7 @@
 #ifndef SELECTIONSORTWIDGET_H
 #define SELECTIONSORTWIDGET_H
 
-#include "view/BaseSortWidget.h"
+#include "view/widgets/BaseSortWidget.h"
 
 class SelectionSortWidget : public BaseSortWidget
 {

@@ -1,7 +1,7 @@
 #ifndef BUBBLESORTWIDGET_H
 #define BUBBLESORTWIDGET_H
 
-#include "view/BaseSortWidget.h"
+#include "view/widgets/BaseSortWidget.h"
 #include <QPushButton>
 
 class BubbleSortWidget : public BaseSortWidget

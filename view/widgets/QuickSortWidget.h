@@ -1,7 +1,7 @@
 #ifndef QUICKSORTWIDGET_H
 #define QUICKSORTWIDGET_H
 
-#include "view/BaseSortWidget.h"
+#include "view/widgets/BaseSortWidget.h"
 
 class QuickSortWidget : public BaseSortWidget
 {

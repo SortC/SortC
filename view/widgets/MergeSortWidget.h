@@ -1,7 +1,7 @@
 #ifndef MERGESORTWIDGET_H
 #define MERGESORTWIDGET_H
 
-#include "view/BaseSortWidget.h"
+#include "view/widgets/BaseSortWidget.h"
 
 class MergeSortWidget : public BaseSortWidget
 {

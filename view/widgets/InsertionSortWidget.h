@@ -1,7 +1,7 @@
 #ifndef INSERTIONSORTWIDGET_H
 #define INSERTIONSORTWIDGET_H
 
-#include "view/BaseSortWidget.h"
+#include "view/widgets/BaseSortWidget.h"
 
 class InsertionSortWidget : public BaseSortWidget
 {
