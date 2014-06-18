@@ -1,6 +1,8 @@
 #include "ConfiguratorView.h"
 #include "ui_ConfiguratorView.h"
-#include "SortView.h"
+#include <qmessagebox.h>
+
+int ConfiguratorView::count = 0;
 
 ConfiguratorView::ConfiguratorView(QWidget *parent) :
     QMainWindow(parent),
@@ -9,11 +11,14 @@ ConfiguratorView::ConfiguratorView(QWidget *parent) :
     ui->setupUi(this);
 }
 
-
-
 ConfiguratorView::~ConfiguratorView()
 {
     delete ui;
+}
+
+void ConfiguratorView::decrementCount()
+{
+    count--;
 }
 
 void ConfiguratorView::on_startBtn_clicked()
@@ -29,6 +34,15 @@ void ConfiguratorView::on_startBtn_clicked()
     }
     zahlen[3]= zahlen[1];
 
-    SortView* sortView = new SortView(0, zahlen , anzWerte);
-    sortView->show();
+    if (count >= 2)
+    {
+        QMessageBox::information(this, tr("Fehler"), tr("Es können nur maximal zwei Sortierfenster gestartet werden"));
+    }
+
+    else{
+        SortView* sortView = new SortView(0, zahlen , anzWerte);
+        sortView->show();
+        sortViewtab[count] = sortView;
+        count++;
+    }
 }

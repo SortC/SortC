@@ -11,6 +11,8 @@
 #include "view/widgets/InsertionSortWidget.h"
 #include "view/widgets/MergeSortWidget.h"
 #include "view/widgets/QuickSortWidget.h"
+#include <qmessagebox.h>
+#include <QCloseEvent>
 
 //toDo entfernen, wird nur als dummy benutzt
 #include "view/widgets/EmptySortWidget.h"
@@ -27,6 +29,8 @@ public:
     explicit SortView(QWidget *parent = 0, int* startTuple = NULL , int numbOfValues = 0);
 
     ~SortView();
+
+    void closeEvent(QCloseEvent *event);
 
 private:
     //void handleStep();
