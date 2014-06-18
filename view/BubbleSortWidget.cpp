@@ -7,7 +7,7 @@ BubbleSortWidget::BubbleSortWidget(QWidget *parent, AlgorithmController* algoCtr
     QPushButton* newValue;
 
     for (int i = 0; i < numbOfValues; i++){
-        QPushButton *newValue = new QPushButton();
+        newValue = new QPushButton();
         newValue->setText(QString::number(startTuple[i]));
         newValue->setAutoFillBackground(true);
         newValue->setStyleSheet("background-color: rgb(255, 0, 0); color: rgb(255, 255, 255)");
