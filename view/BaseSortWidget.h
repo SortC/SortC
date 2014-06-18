@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QFrame>
 #include "controller/AlgorithmController.h"
+#include "ui_BaseSortWidget.h"
 
 namespace Ui {
 class BaseSortWidget;

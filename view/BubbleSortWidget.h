@@ -2,6 +2,7 @@
 #define BUBBLESORTWIDGET_H
 
 #include "view/BaseSortWidget.h"
+#include <QPushButton>
 
 class BubbleSortWidget : public BaseSortWidget
 {
@@ -13,6 +14,8 @@ signals:
 
 public slots:
 
+private:
+    QPushButton** displayValues;
 };
 
 #endif // BUBBLESORTWIDGET_H

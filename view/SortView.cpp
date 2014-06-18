@@ -12,21 +12,10 @@ SortView::SortView(QWidget *parent, int* startTuple, int numbOfValues) :
     ui(new Ui::SortView){
     ui->setupUi(this);
     this->startTuple = new int[numbOfValues];
-/*
-    btns = new QPushButton*[numbOfValues];
-
     for (int i = 0; i < numbOfValues; i++)
     {
         this->startTuple[i] = startTuple[i];
-        QPushButton *btn = new QPushButton();
-        btn->setText(QString::number(startTuple[i]));
-        btn->setAutoFillBackground(true);
-        btn->setStyleSheet("background-color: rgb(255, 0, 0); color: rgb(255, 255, 255)");
-        btn->setMinimumHeight(startTuple[i]*4);
-        ui->horLayoutSorting->addWidget(btn,0,Qt::AlignBottom);
-        btns[i] = btn;
     }
-    */
     this->numbOfValues = numbOfValues;
     controller = new Controller(startTuple, numbOfValues);
     addTabs();
