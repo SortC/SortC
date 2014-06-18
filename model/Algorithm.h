@@ -49,14 +49,14 @@ public:
 	/**
 	* Getter-Funktionen
 	*/
-	int* getCurrentTuple(){ return currentTuple; };
-	int* getStartTuple(){ return startTuple; };
-	int getNumbOfCurrentStep(){ return numbOfCurrentStep; };
-	int getNumbOfSteps(){ return numbOfSteps; };
-	int getNumbOfValues(){ return numbOfValues; };
+    int* getCurrentTuple(){ return currentTuple; }
+    int* getStartTuple(){ return startTuple; }
+    int getNumbOfCurrentStep(){ return numbOfCurrentStep; }
+    int getNumbOfSteps(){ return numbOfSteps; }
+    int getNumbOfValues(){ return numbOfValues; }
 
 protected:
-	virtual void sort();
+    virtual void sort() = 0;
 	int maxValue;
 	bool isSorted;
 	int* startTuple;
