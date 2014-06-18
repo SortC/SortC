@@ -23,6 +23,7 @@ private slots:
     void on_btnNextStep_clicked();
 
 protected:
+    virtual void handleStep();
     QWidget *parent;
     AlgorithmController* algoCtrl;
     int* startTuple;

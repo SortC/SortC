@@ -8,7 +8,7 @@ class QuickSort :
 public:
 	QuickSort(int* values, int numberOfValues);
 	QuickSort(int numberOfValues);
-	void sort() override;
+    void sort();
 
 private:
 	/**
