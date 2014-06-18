@@ -8,8 +8,15 @@ Controller::Controller(int *startTuple, int numbOfValues) {
     {
         this->startTuple[i] = startTuple[i];
     }
+
     this->numbOfValues = numbOfValues;
     this->bubbleSortCtrl = new AlgorithmController(new BubbleSort(startTuple, numbOfValues));
+    this->selectionSortCtrl = new AlgorithmController(new SelectionSort(startTuple,numbOfValues));
+    this->insertionSortCtrl = new AlgorithmController(new InsertionSort(startTuple,numbOfValues));
+    this->mergeSortCtrl = new AlgorithmController(new MergeSort(startTuple,numbOfValues));
+    this->quickSortCtrl = new AlgorithmController(new QuickSort(startTuple,numbOfValues));
+    this->bucketSortCtrl = new AlgorithmController(new BucketSort(startTuple,numbOfValues));
+    this->heapSortCtrl = new AlgorithmController(new HeapSort(startTuple,numbOfValues));
 }
 
 Controller::Controller(int numbOfValues) {
@@ -23,10 +30,12 @@ Controller::Controller(int numbOfValues) {
     }
 
     this->bubbleSortCtrl = new AlgorithmController(new BubbleSort(startTuple, numbOfValues));
-}
-AlgorithmController *Controller::getBubbleSortCtrl() const
-{
-    return bubbleSortCtrl;
+    this->selectionSortCtrl = new AlgorithmController(new SelectionSort(startTuple,numbOfValues));
+    this->insertionSortCtrl = new AlgorithmController(new InsertionSort(startTuple,numbOfValues));
+    this->mergeSortCtrl = new AlgorithmController(new MergeSort(startTuple,numbOfValues));
+    this->quickSortCtrl = new AlgorithmController(new QuickSort(startTuple,numbOfValues));
+    this->bucketSortCtrl = new AlgorithmController(new BucketSort(startTuple,numbOfValues));
+    this->heapSortCtrl = new AlgorithmController(new HeapSort(startTuple,numbOfValues));
 }
 
 

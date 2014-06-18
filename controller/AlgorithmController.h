@@ -1,6 +1,8 @@
 #ifndef ALGORITHMCONTROLLER_H
 #define ALGORITHMCONTROLLER_H
+
 #include "model/Algorithm.h"
+
 class AlgorithmController
 {
 public:

@@ -34,7 +34,7 @@ void SortView::addTabs(){
     QWidget* isWidget = new EmptySortWidget(ui->tabWidget, controller->getBubbleSortCtrl(),startTuple,numbOfValues);
     ui->tabWidget->addTab(isWidget ,QString("InsertionSort"));
 
-    QWidget* ssWidget = new EmptySortWidget(ui->tabWidget, controller->getBubbleSortCtrl(),startTuple,numbOfValues);
+    QWidget* ssWidget = new SelectionSortWidget(ui->tabWidget, controller->getSelectionSortCtrl(),startTuple,numbOfValues);
     ui->tabWidget->addTab(ssWidget ,QString("SelectionSort"));
 
     QWidget* qsWidget = new EmptySortWidget(ui->tabWidget, controller->getBubbleSortCtrl(),startTuple,numbOfValues);

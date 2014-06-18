@@ -29,7 +29,8 @@ SOURCES += main.cpp\
     view/ConfiguratorView.cpp \
     view/BaseSortWidget.cpp \
     view/BubbleSortWidget.cpp \
-    view/EmptySortWidget.cpp
+    view/EmptySortWidget.cpp \
+    view/SelectionSortwidget.cpp
 
 HEADERS  += view/SortView.h \
     model/Algorithm.h \
@@ -48,7 +49,8 @@ HEADERS  += view/SortView.h \
     view/ConfiguratorView.h \
     view/BaseSortWidget.h \
     view/BubbleSortWidget.h \
-    view/EmptySortWidget.h
+    view/EmptySortWidget.h \
+    view/SelectionSortWidget.h
 
 FORMS    += view/SortView.ui \
     view/ConfiguratorView.ui \
