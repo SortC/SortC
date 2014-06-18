@@ -47,37 +47,37 @@ int QuickSort::partition(int a[], int left, int right)
 	int pivotStelle = left;
 
 	stringstream buffer;
-	buffer << "Betrachte Bereich   [" << left <<"] bis  [" << right << "]" << endl;
+    buffer << "Betrachte Bereich   [" << left <<"] bis  [" << right << "]" ;
     steps.push_back(new Step(left, right, Step::MARK, ++numbOfSteps, buffer.str()));
 	stringstream buffer2;
-	buffer2 << "Setze Pivot auf\t      [" << right << "]" << endl;
+    buffer2 << "Setze Pivot auf\t      [" << right << "]" ;
     steps.push_back(new Step(pivotStelle, 0, Step::PIVOT, ++numbOfSteps, buffer2.str() ));
 	while (true)
 	{
 
 		while (a[left] < pivot){
 			stringstream buffer;
-			buffer << "Pruefe ob \tPivot[" << pivotStelle <<"]  < LZ[" << left << "]" << endl;
+            buffer << "Pruefe ob \tPivot[" << pivotStelle <<"]  < LZ[" << left << "]" ;
             steps.push_back(new Step(pivotStelle, left,Step::COMP, ++numbOfSteps, buffer.str() ));
 			left++;
 		}
 
 		while (a[right] > pivot){
 			stringstream buffer;
-			buffer << "Pruefe ob \tPivot[" << pivotStelle <<"]  > RZ[" << right <<"]" << endl;
+            buffer << "Pruefe ob \tPivot[" << pivotStelle <<"]  > RZ[" << right <<"]" ;
             steps.push_back(new Step(pivotStelle, left,Step::COMP, ++numbOfSteps, buffer.str() ));
 			right--;
 		}
 
 
 		stringstream buffer;
-		buffer << "Pruefe ob \tLZ   [" << left << "]  < RZ[" << right << "]" << endl;
+        buffer << "Pruefe ob \tLZ   [" << left << "]  < RZ[" << right << "]" ;
         steps.push_back(new Step(pivotStelle, left,Step::COMP, ++numbOfSteps, buffer.str() ));
 
 		if (left < right)
 		{
 			stringstream buffer;
-			buffer << "Tausche \t     [" << left << "] mit  [" << right << "]" << endl;
+            buffer << "Tausche \t     [" << left << "] mit  [" << right << "]" ;
             steps.push_back(new Step(left, right,Step::SWAP, ++numbOfSteps, buffer.str() ));
 			int temp = a[right];
 			a[right] = a[left];
@@ -88,7 +88,7 @@ int QuickSort::partition(int a[], int left, int right)
 		else 
 		{
 			stringstream buffer;
-			buffer << "Setze Pivot auf\t      [" << right << "]" << endl;
+            buffer << "Setze Pivot auf\t      [" << right << "]" ;
             //steps.push_back(new Step(right, 0, Step::PIVOT, ++numbOfSteps, buffer.str() ));
 			return right;
 		}

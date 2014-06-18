@@ -8,6 +8,9 @@
 #include "controller/Controller.h"
 #include "view/BubbleSortWidget.h"
 #include "view/SelectionSortWidget.h"
+#include "view/InsertionSortWidget.h"
+#include "view/MergeSortWidget.h"
+#include "view/QuickSortWidget.h"
 
 //toDo entfernen, wird nur als dummy benutzt
 #include "view/EmptySortWidget.h"

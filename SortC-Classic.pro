@@ -30,7 +30,10 @@ SOURCES += main.cpp\
     view/BaseSortWidget.cpp \
     view/BubbleSortWidget.cpp \
     view/EmptySortWidget.cpp \
-    view/SelectionSortwidget.cpp
+    view/SelectionSortwidget.cpp \
+    view/InsertionSortWidget.cpp \
+    view/MergeSortWidget.cpp \
+    view/QuickSortWidget.cpp
 
 HEADERS  += view/SortView.h \
     model/Algorithm.h \
@@ -50,7 +53,10 @@ HEADERS  += view/SortView.h \
     view/BaseSortWidget.h \
     view/BubbleSortWidget.h \
     view/EmptySortWidget.h \
-    view/SelectionSortWidget.h
+    view/SelectionSortWidget.h \
+    view/InsertionSortWidget.h \
+    view/MergeSortWidget.h \
+    view/QuickSortWidget.h
 
 FORMS    += view/SortView.ui \
     view/ConfiguratorView.ui \

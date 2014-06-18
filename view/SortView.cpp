@@ -31,21 +31,21 @@ void SortView::addTabs(){
     QWidget* bsWidget = new BubbleSortWidget(ui->tabWidget, controller->getBubbleSortCtrl(),startTuple,numbOfValues);
     ui->tabWidget->addTab(bsWidget ,QString("BubbleSort"));
 
-    QWidget* isWidget = new EmptySortWidget(ui->tabWidget, controller->getBubbleSortCtrl(),startTuple,numbOfValues);
+    QWidget* isWidget = new InsertionSortWidget(ui->tabWidget, controller->getInsertionSortCtrl(),startTuple,numbOfValues);
     ui->tabWidget->addTab(isWidget ,QString("InsertionSort"));
 
     QWidget* ssWidget = new SelectionSortWidget(ui->tabWidget, controller->getSelectionSortCtrl(),startTuple,numbOfValues);
     ui->tabWidget->addTab(ssWidget ,QString("SelectionSort"));
 
-    QWidget* qsWidget = new EmptySortWidget(ui->tabWidget, controller->getBubbleSortCtrl(),startTuple,numbOfValues);
+    QWidget* qsWidget = new QuickSortWidget(ui->tabWidget, controller->getQuickSortCtrl(),startTuple,numbOfValues);
     ui->tabWidget->addTab(qsWidget ,QString("QuickSort"));
 
-    QWidget* msWidget = new EmptySortWidget(ui->tabWidget, controller->getBubbleSortCtrl(),startTuple,numbOfValues);
+    QWidget* msWidget = new MergeSortWidget(ui->tabWidget, controller->getMergeSortCtrl(),startTuple,numbOfValues);
     ui->tabWidget->addTab(msWidget ,QString("MergeSort"));
 
-    QWidget* hsWidget = new EmptySortWidget(ui->tabWidget, controller->getBubbleSortCtrl(),startTuple,numbOfValues);
+    QWidget* hsWidget = new EmptySortWidget(ui->tabWidget, controller->getHeapSortCtrl(),startTuple,numbOfValues);
     ui->tabWidget->addTab(hsWidget ,QString("HeapSort"));
 
-    QWidget* bucksWidget = new EmptySortWidget(ui->tabWidget, controller->getBubbleSortCtrl(),startTuple,numbOfValues);
+    QWidget* bucksWidget = new EmptySortWidget(ui->tabWidget, controller->getBucketSortCtrl(),startTuple,numbOfValues);
     ui->tabWidget->addTab(bucksWidget ,QString("BucketSort"));
 }

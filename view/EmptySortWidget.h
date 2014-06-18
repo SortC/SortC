@@ -13,6 +13,9 @@ signals:
 
 public slots:
 
+private:
+    void handleStep();
+
 };
 
 #endif // EMPTYSORTWIDGET_H
