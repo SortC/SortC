@@ -11,11 +11,15 @@ BaseSortWidget::BaseSortWidget(QWidget *parent, AlgorithmController* algoCtrl, i
     for(int i = 0; i < numbOfValues; i++){
         this->startTuple[i] = startTuple[i];
     }
+    timer = new QTimer(this);
+    connect(timer,SIGNAL(timeout()),SLOT(on_btnNextStep_clicked()));
     ui->setupUi(this);
+    this->interval = ui->intervalSpeedSlider->value();
 }
 
 BaseSortWidget::~BaseSortWidget()
 {
+    delete timer;
     delete startTuple;
     delete ui;
 }
@@ -35,4 +39,27 @@ void BaseSortWidget::on_btnPrevStep_clicked()
 void BaseSortWidget::handleStep(){
     ui->lblExplanation->setText(QString::fromStdString(algoCtrl->getCurrentStep()->toString()));
     ui->lcdNumActStep->display(algoCtrl->getCurrentStep()->getNumber());
+}
+
+void BaseSortWidget::on_btnPlayPause_toggled(bool checked)
+{
+    ui->btnNextStep->setEnabled(!checked);
+    ui->btnPrevStep->setEnabled(!checked);
+    ui->intervalSpeedSlider->setEnabled(!checked);
+
+    QString play = "PLAY";
+    QString pause = "PAUSE";
+
+    if(checked){
+        ui->btnPlayPause->setText(pause);
+        timer->start(interval);
+    }else{
+        ui->btnPlayPause->setText(play);
+        timer->stop();
+    }
+}
+
+void BaseSortWidget::on_intervalSpeedSlider_sliderMoved(int position)
+{
+    interval = position;
 }

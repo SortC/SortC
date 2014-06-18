@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QFrame>
+#include <QTimer>
 #include "controller/AlgorithmController.h"
 #include "ui_BaseSortWidget.h"
 
@@ -21,9 +22,15 @@ public:
 private slots:
     void on_btnPrevStep_clicked();
     void on_btnNextStep_clicked();
+    void on_btnPlayPause_toggled(bool checked);
+    void on_intervalSpeedSlider_sliderMoved(int position);
 
 protected:
     virtual void handleStep();
+
+    int interval;
+
+    QTimer* timer;
     QWidget *parent;
     AlgorithmController* algoCtrl;
     int* startTuple;
