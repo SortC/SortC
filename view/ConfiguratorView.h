@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include "SortView.h"
+#include <qmessagebox.h>
+#include <cstdlib>
+#include <time.h>
 
 namespace Ui {
 class ConfiguratorView;

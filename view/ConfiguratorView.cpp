@@ -1,6 +1,6 @@
 #include "ConfiguratorView.h"
 #include "ui_ConfiguratorView.h"
-#include <qmessagebox.h>
+
 
 int ConfiguratorView::count = 0;
 
@@ -25,20 +25,39 @@ void ConfiguratorView::on_startBtn_clicked()
 {
     int anzWerte = ui->valueSlider->value();
 
-    //qDebug("Value1 = %d", anzWerte);
     int zahlen[anzWerte];
 
-    for (int i = 0 ; i<anzWerte; i++)
+    QString itemText = ui->sortDierectionComboBox->currentText();
+
+    if (itemText.compare(ui->sortDierectionComboBox->itemText(1)) && ui->sortCheckBox->isChecked())
     {
-        zahlen[i] = anzWerte - i;
+        for (int i = 0; i < anzWerte; i++)
+        {
+            zahlen[i] = i;
+        }
     }
-    zahlen[3]= zahlen[1];
+    else if (itemText.compare(ui->sortDierectionComboBox->itemText(2)) && ui->sortCheckBox->isChecked())
+    {
+        for (int i = 0; i < anzWerte; i++)
+        {
+            zahlen[i] = anzWerte - i;
+        }
+    }
+    else
+    {
+        srand(time(NULL));
+        int maxValue = 100;
+
+        for (int i = 0; i < anzWerte; i++)
+        {
+            zahlen[i] = rand() % maxValue;
+        }
+    }
 
     if (count >= 2)
     {
         QMessageBox::information(this, tr("Fehler"), tr("Es können nur maximal zwei Sortierfenster gestartet werden"));
     }
-
     else{
         SortView* sortView = new SortView(0, zahlen , anzWerte);
         sortView->show();
