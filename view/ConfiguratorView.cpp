@@ -33,7 +33,7 @@ void ConfiguratorView::on_startBtn_clicked()
     {
         for (int i = 0; i < anzWerte; i++)
         {
-            zahlen[i] = i;
+            zahlen[i] = i + 1;
         }
     }
     else if (itemText.compare(ui->sortDierectionComboBox->itemText(2)) && ui->sortCheckBox->isChecked())
