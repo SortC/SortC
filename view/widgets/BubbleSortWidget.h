@@ -8,6 +8,16 @@ class BubbleSortWidget : public BaseSortWidget
 {
     Q_OBJECT
 public:
+    /**
+     * @brief BubbleSortWidget
+     *
+     * Konstruktor fuer ein BubbleSort-Sortierfenster, erstellt Inhalt des Sortierbereichs
+     *
+     * @param parent: Elternobjekt in der UI-Hierarchie
+     * @param algoCtrl: Pointer auf dem diesem Fenster zugewiesenen Controller
+     * @param startTuple: Array von Startwerten
+     * @param numbOfValues: Anzahl der Startwerte
+     */
     explicit BubbleSortWidget(QWidget *parent = 0, AlgorithmController* algoCtrl = NULL, int* startTuple = NULL , int numbOfValues = 0);
 
 signals:
@@ -15,7 +25,18 @@ signals:
 public slots:
 
 private:
+    /**
+     * @brief handleStep
+     *
+     * Konkrete Funktion zum Auswerten eines Schrittes fuer BubbleSort
+     */
     void handleStep();
+
+    /**
+     * @brief displayValues
+     *
+     * Array der Anzeigewerte-UI-Objekte
+     */
     QPushButton** displayValues;
 };
 
