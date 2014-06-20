@@ -15,6 +15,9 @@ BaseSortWidget::BaseSortWidget(QWidget *parent, AlgorithmController* algoCtrl, i
     connect(timer,SIGNAL(timeout()),SLOT(on_btnNextStep_clicked()));
     ui->setupUi(this);
     this->interval = ui->intervalSpeedSlider->value();
+
+    this->url = QString("http://www.wikipedia.de");
+    this->infoViewOpen = false;
 }
 
 BaseSortWidget::~BaseSortWidget()
@@ -68,4 +71,10 @@ void BaseSortWidget::on_btnPlayPause_toggled(bool checked)
 void BaseSortWidget::on_intervalSpeedSlider_sliderMoved(int position)
 {
     interval = position;
+}
+
+void BaseSortWidget::on_pushButton_clicked()
+{
+    InfoView* infoView = new InfoView(0,this->url);
+    infoView->show();
 }

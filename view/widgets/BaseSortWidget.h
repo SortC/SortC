@@ -6,6 +6,7 @@
 #include <QTimer>
 #include "controller/AlgorithmController.h"
 #include "ui_BaseSortWidget.h"
+#include "view/InfoView.h"
 
 namespace Ui {
 class BaseSortWidget;
@@ -32,6 +33,8 @@ public:
       * Dekonstruktor
       */
     ~BaseSortWidget();
+
+    bool infoViewOpen;
 
 //Envents des UI
 private slots:
@@ -67,6 +70,8 @@ private slots:
      */
     void on_intervalSpeedSlider_sliderMoved(int position);
 
+    void on_pushButton_clicked();
+
 protected:
     /**
      * @brief handleStep
@@ -82,6 +87,7 @@ protected:
     int* startTuple;
     int numbOfValues;
     int interval; /**< Zeit des Timerintervalls in ms */
+    QString url;
 };
 
 #endif // BASESORTWIDGET_H

@@ -16,6 +16,8 @@ SelectionSortWidget::SelectionSortWidget(QWidget *parent, AlgorithmController* a
         displayValues[i] = newValue;
     }
 
+    this->url = QString("http://de.wikipedia.org/wiki/SelectionSort");
+
     handleStep();
 }
 

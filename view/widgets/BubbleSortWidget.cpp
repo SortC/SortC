@@ -16,6 +16,8 @@ BubbleSortWidget::BubbleSortWidget(QWidget *parent, AlgorithmController* algoCtr
         displayValues[i] = newValue;
     }
 
+    this->url = QString("http://de.wikipedia.org/wiki/Bubblesort");
+
     handleStep();
 }
 
