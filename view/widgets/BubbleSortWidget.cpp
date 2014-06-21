@@ -5,9 +5,13 @@ BubbleSortWidget::BubbleSortWidget(QWidget *parent, AlgorithmController* algoCtr
 {
     displayValues = new SortValue*[numbOfValues];
     SortValue* newValue;
-
+    int max = 0;
     for (int i = 0; i < numbOfValues; i++){
-        newValue = new SortValue(this, startTuple[i]);
+        if(max < startTuple[i])
+            max = startTuple[i];
+    }
+    for (int i = 0; i < numbOfValues; i++){
+        newValue = new SortValue(this, startTuple[i], max);
         ui->horLayoutSorting->addWidget(newValue,0,Qt::AlignBottom);
         displayValues[i] = newValue;
     }
