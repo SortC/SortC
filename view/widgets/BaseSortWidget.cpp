@@ -55,6 +55,7 @@ void BaseSortWidget::on_btnPlayPause_toggled(bool checked)
     ui->btnNextStep->setEnabled(!checked);
     ui->btnPrevStep->setEnabled(!checked);
     ui->intervalSpeedSlider->setEnabled(!checked);
+     ui->btnReset->setEnabled(!checked);
 
     QString play = "PLAY";
     QString pause = "PAUSE";
@@ -77,4 +78,16 @@ void BaseSortWidget::on_pushButton_clicked()
 {
     InfoView* infoView = new InfoView(0,this->url);
     infoView->show();
+}
+
+void BaseSortWidget::on_btnReset_clicked()
+{
+    while(algoCtrl->getCurrentStep()->getNumber() > 1) {
+        algoCtrl->setPrevStep();
+        QThread::msleep(1);
+        handleStep();
+    }
+    ui->btnNextStep->setEnabled(true);
+    ui->btnPlayPause->setEnabled(true);
+    ui->btnPrevStep->setEnabled(false);
 }

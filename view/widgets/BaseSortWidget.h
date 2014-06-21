@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QFrame>
 #include <QTimer>
+#include <QThread>
 #include "controller/AlgorithmController.h"
 #include "ui_BaseSortWidget.h"
 #include "view/InfoView.h"
@@ -71,6 +72,8 @@ private slots:
     void on_intervalSpeedSlider_sliderMoved(int position);
 
     void on_pushButton_clicked();
+
+    void on_btnReset_clicked();
 
 protected:
     /**
