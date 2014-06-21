@@ -2,6 +2,7 @@
 #define QUICKSORTWIDGET_H
 
 #include "view/widgets/BaseSortWidget.h"
+#include "view/widgets/SortValue.h"
 
 class QuickSortWidget : public BaseSortWidget
 {
@@ -31,7 +32,7 @@ private:
      */
     void handleStep();
 
-
+    SortValue** displayValues;
 };
 
 #endif // QUICKSORTWIDGET_H
