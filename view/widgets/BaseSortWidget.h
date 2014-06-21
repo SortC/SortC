@@ -71,9 +71,9 @@ private slots:
      */
     void on_intervalSpeedSlider_sliderMoved(int position);
 
-    void on_pushButton_clicked();
-
     void on_btnReset_clicked();
+
+    void on_infoButton_clicked();
 
 protected:
     /**

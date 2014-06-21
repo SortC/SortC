@@ -74,12 +74,6 @@ void BaseSortWidget::on_intervalSpeedSlider_sliderMoved(int position)
     interval = position;
 }
 
-void BaseSortWidget::on_pushButton_clicked()
-{
-    InfoView* infoView = new InfoView(0,this->url);
-    infoView->show();
-}
-
 void BaseSortWidget::on_btnReset_clicked()
 {
     while(algoCtrl->getCurrentStep()->getNumber() > 1) {
@@ -91,4 +85,10 @@ void BaseSortWidget::on_btnReset_clicked()
     ui->btnNextStep->setEnabled(true);
     ui->btnPlayPause->setEnabled(true);
     ui->btnPrevStep->setEnabled(false);
+}
+
+void BaseSortWidget::on_infoButton_clicked()
+{
+    InfoView* infoView = new InfoView(0,this->url);
+    infoView->show();
 }
