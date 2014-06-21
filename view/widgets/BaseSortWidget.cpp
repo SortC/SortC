@@ -84,9 +84,10 @@ void BaseSortWidget::on_btnReset_clicked()
 {
     while(algoCtrl->getCurrentStep()->getNumber() > 1) {
         algoCtrl->setPrevStep();
-        QThread::msleep(1);
+        //QThread::msleep(1);
         handleStep();
     }
+
     ui->btnNextStep->setEnabled(true);
     ui->btnPlayPause->setEnabled(true);
     ui->btnPrevStep->setEnabled(false);
