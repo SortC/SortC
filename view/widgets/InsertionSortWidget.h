@@ -2,6 +2,7 @@
 #define INSERTIONSORTWIDGET_H
 
 #include "view/widgets/BaseSortWidget.h"
+#include "view/widgets/SortValue.h"
 
 class InsertionSortWidget : public BaseSortWidget
 {
@@ -30,7 +31,7 @@ private:
      * Konkrete Funktion zum Auswerten eines Schrittes fuer InsertionSort
      */
     void handleStep();
-
+    SortValue** displayValues;
 };
 
 #endif // INSERTIONSORTWIDGET_H

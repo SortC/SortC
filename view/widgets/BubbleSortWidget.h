@@ -2,7 +2,7 @@
 #define BUBBLESORTWIDGET_H
 
 #include "view/widgets/BaseSortWidget.h"
-#include <QPushButton>
+#include "view/widgets/SortValue.h"
 
 class BubbleSortWidget : public BaseSortWidget
 {
@@ -37,7 +37,7 @@ private:
      *
      * Array der Anzeigewerte-UI-Objekte
      */
-    QPushButton** displayValues;
+    SortValue** displayValues;
 };
 
 #endif // BUBBLESORTWIDGET_H

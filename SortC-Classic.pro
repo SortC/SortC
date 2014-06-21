@@ -34,7 +34,8 @@ SOURCES += main.cpp\
     view/widgets/MergeSortWidget.cpp \
     view/widgets/QuickSortWidget.cpp \
     view/widgets/SelectionSortwidget.cpp \
-    view/InfoView.cpp
+    view/InfoView.cpp \
+    view/widgets/SortValue.cpp
 
 HEADERS  += view/SortView.h \
     model/Algorithm.h \
@@ -58,9 +59,11 @@ HEADERS  += view/SortView.h \
     view/widgets/MergeSortWidget.h \
     view/widgets/QuickSortWidget.h \
     view/widgets/SelectionSortWidget.h \
-    view/InfoView.h
+    view/InfoView.h \
+    view/widgets/SortValue.h
 
 FORMS    += view/SortView.ui \
     view/ConfiguratorView.ui \
     view/widgets/BaseSortWidget.ui \
-    view/InfoView.ui
+    view/InfoView.ui \
+    view/widgets/SortValue.ui
