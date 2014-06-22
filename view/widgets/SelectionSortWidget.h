@@ -2,6 +2,7 @@
 #define SELECTIONSORTWIDGET_H
 
 #include "view/widgets/BaseSortWidget.h"
+#include "view/widgets/SortValue.h"
 
 class SelectionSortWidget : public BaseSortWidget
 {
@@ -30,7 +31,7 @@ private:
      * Konkrete Funktion zum Auswerten eines Schrittes fuer SelectionSort
      */
     void handleStep();
-    QPushButton** displayValues;
+    SortValue** displayValues;
 
 };
 
