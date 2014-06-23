@@ -24,17 +24,8 @@ SortView::SortView(QWidget *parent, int* startTuple, int numbOfValues) :
 
 void SortView::closeEvent(QCloseEvent *event)
 {
-    QMessageBox::StandardButton resBtn = QMessageBox::question( this, "Alert",
-                                                                tr("Are you sure?\n"),
-                                                                QMessageBox::Cancel | QMessageBox::No | QMessageBox::Yes,
-                                                                QMessageBox::Yes);
-    if (resBtn != QMessageBox::Yes) {
-        event->ignore();
-    } else {
-        event->accept();
         ConfiguratorView cV(0);
         cV.decrementCount();
-    }
 }
 
 SortView::~SortView()
