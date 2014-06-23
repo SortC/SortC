@@ -56,6 +56,7 @@ void BaseSortWidget::handleStep(){
 
 void BaseSortWidget::on_btnPlayPause_toggled(bool checked)
 {
+    ui->btnPlayPause->setChecked(checked);
     ui->btnNextStep->setEnabled(!checked);
     ui->btnPrevStep->setEnabled(!checked);
     ui->intervalSpeedSlider->setEnabled(!checked);

@@ -2,8 +2,9 @@
 #define SORTVIEW_H
 
 #include <QMainWindow>
-#include <QColorDialog>
 #include <QHBoxLayout>
+#include <QCloseEvent>
+#include <QString>
 #include "ui_SortView.h"
 #include "controller/Controller.h"
 #include "view/widgets/BubbleSortWidget.h"
@@ -11,8 +12,6 @@
 #include "view/widgets/InsertionSortWidget.h"
 #include "view/widgets/MergeSortWidget.h"
 #include "view/widgets/QuickSortWidget.h"
-#include <qmessagebox.h>
-#include <QCloseEvent>
 
 //toDo entfernen, wird nur als dummy benutzt
 #include "view/widgets/EmptySortWidget.h"
@@ -50,16 +49,35 @@ public:
      * @param event
      */
     void closeEvent(QCloseEvent *event);
+private slots:
+    void on_tabWidget_currentChanged();
+
 private:
+    /**
+     * @brief createTabs
+     *
+     * Erstellt Tabs
+     */
+    void createTabs();
+
     /**
      * @brief addTabs
      *
-     * Erstellt Tabs und fuegt sie in den Tabview ein
+     * Fuegt erstellte Tabs in den Tabview ein
      */
     void addTabs();
 
     Controller *controller; /**< Pointer auf den allgemeinen Controller */
     Ui::SortView *ui;       /**< Pointer auf die SortUI */
+
+    BubbleSortWidget* bsWidget;
+    InsertionSortWidget* isWidget;
+    SelectionSortWidget* ssWidget;
+    QuickSortWidget* qsWidget;
+    MergeSortWidget* msWidget;
+    EmptySortWidget* hsWidget;
+    EmptySortWidget* bucksWidget;
+
     int* startTuple;
     int numbOfValues;
 };

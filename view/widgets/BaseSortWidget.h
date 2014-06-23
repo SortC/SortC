@@ -37,6 +37,16 @@ public:
 
     bool infoViewOpen;
 
+public slots:
+    /**
+     * @brief on_btnPlayPause_toggled
+     *
+     * Wird beim Klicken des bttPlayPause ausgeloest, startet/stopt den Wiederholungsinterval
+     *
+     * @param checked: Status des Buttons (vergleichbar mit Checkbox.checked)
+     */
+    void on_btnPlayPause_toggled(bool checked);
+
 protected slots:
     virtual void on_btnReset_clicked();
 
@@ -55,15 +65,6 @@ private slots:
      * Event, wird ausgeloest beim Klicken des btnNextStep
      */
     void on_btnNextStep_clicked();
-
-    /**
-     * @brief on_btnPlayPause_toggled
-     *
-     * Wird beim Klicken des bttPlayPause ausgeloest, startet/stopt den Wiederholungsinterval
-     *
-     * @param checked: Status des Buttons (vergleichbar mit Checkbox.checked)
-     */
-    void on_btnPlayPause_toggled(bool checked);
 
     /**
      * @brief on_intervalSpeedSlider_sliderMoved
