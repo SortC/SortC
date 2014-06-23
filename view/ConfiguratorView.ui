@@ -130,7 +130,7 @@
           <item>
            <widget class="QCheckBox" name="sortCheckBox">
             <property name="text">
-             <string>Vosortierung</string>
+             <string>Vorsortierung</string>
             </property>
            </widget>
           </item>
