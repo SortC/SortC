@@ -53,3 +53,12 @@ void BubbleSortWidget::handleStep(){
         break;
     }
 }
+
+void BubbleSortWidget::on_btnReset_clicked(){
+    BaseSortWidget::on_btnReset_clicked();
+
+    for(int i = 0; i<numbOfValues; i++){
+        displayValues[i]->setValue(startTuple[i]);
+    }
+    handleStep();
+}

@@ -59,3 +59,12 @@ void SelectionSortWidget::handleStep()
         break;
     }
 }
+
+void SelectionSortWidget::on_btnReset_clicked(){
+    BaseSortWidget::on_btnReset_clicked();
+
+    for(int i = 0; i<numbOfValues; i++){
+        displayValues[i]->setValue(startTuple[i]);
+    }
+    handleStep();
+}

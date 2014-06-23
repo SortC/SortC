@@ -37,6 +37,9 @@ public:
 
     bool infoViewOpen;
 
+protected slots:
+    virtual void on_btnReset_clicked();
+
 //Envents des UI
 private slots:
     /**
@@ -70,8 +73,6 @@ private slots:
      * @param position: Position des Sliders
      */
     void on_intervalSpeedSlider_sliderMoved(int position);
-
-    void on_btnReset_clicked();
 
     void on_infoButton_clicked();
 

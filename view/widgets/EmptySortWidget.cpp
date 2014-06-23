@@ -10,3 +10,8 @@ void EmptySortWidget::handleStep()
 {
     BaseSortWidget::handleStep();
 }
+
+void EmptySortWidget::on_btnReset_clicked(){
+    BaseSortWidget::on_btnReset_clicked();
+    handleStep();
+}

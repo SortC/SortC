@@ -78,8 +78,6 @@ void BaseSortWidget::on_btnReset_clicked()
 {
     while(algoCtrl->getCurrentStep()->getNumber() > 1) {
         algoCtrl->setPrevStep();
-        //QThread::msleep(1);
-        handleStep();
     }
 
     ui->btnNextStep->setEnabled(true);

@@ -26,6 +26,7 @@ public:
 signals:
 
 public slots:
+    void on_btnReset_clicked();
 
 private:
     /**

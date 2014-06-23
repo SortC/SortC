@@ -12,3 +12,9 @@ void MergeSortWidget::handleStep()
 {
     BaseSortWidget::handleStep();
 }
+
+void MergeSortWidget::on_btnReset_clicked(){
+    BaseSortWidget::on_btnReset_clicked();
+
+    handleStep();
+}
