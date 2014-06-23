@@ -359,6 +359,9 @@
          </item>
          <item>
           <widget class="QPushButton" name="btnReset">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
            <property name="minimumSize">
             <size>
              <width>35</width>

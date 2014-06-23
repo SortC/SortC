@@ -30,16 +30,20 @@ BaseSortWidget::~BaseSortWidget()
 void BaseSortWidget::on_btnNextStep_clicked()
 {
     algoCtrl->setNextStep();
-    if(!timer->isActive())
+    if(!timer->isActive()){
         ui->btnPrevStep->setEnabled(true);
+        ui->btnReset->setEnabled(true);
+    }
     handleStep();
 }
 
 void BaseSortWidget::on_btnPrevStep_clicked()
 {
     algoCtrl->setPrevStep();
-    if(algoCtrl->getCurrentStep()->getNumber() == 1)
+    if(algoCtrl->getCurrentStep()->getNumber() == 1){
         ui->btnPrevStep->setEnabled(false);
+        ui->btnReset->setEnabled(false);
+    }
     ui->btnNextStep->setEnabled(true);
     ui->btnPlayPause->setEnabled(true);
     handleStep();
@@ -55,17 +59,20 @@ void BaseSortWidget::on_btnPlayPause_toggled(bool checked)
     ui->btnNextStep->setEnabled(!checked);
     ui->btnPrevStep->setEnabled(!checked);
     ui->intervalSpeedSlider->setEnabled(!checked);
-     ui->btnReset->setEnabled(!checked);
-
-    QString play = "PLAY";
-    QString pause = "PAUSE";
+    ui->btnReset->setEnabled(!checked);
 
     if(checked){
+        QString pause = "PAUSE";
         ui->btnPlayPause->setText(pause);
         timer->start(interval);
     }else{
+        QString play = "PLAY";
         ui->btnPlayPause->setText(play);
         timer->stop();
+        if(algoCtrl->getCurrentStep()->getNumber() == 1){
+            ui->btnPrevStep->setEnabled(false);
+            ui->btnReset->setEnabled(false);
+        }
     }
 }
 
@@ -80,6 +87,7 @@ void BaseSortWidget::on_btnReset_clicked()
         algoCtrl->setPrevStep();
     }
 
+    ui->btnReset->setEnabled(false);
     ui->btnNextStep->setEnabled(true);
     ui->btnPlayPause->setEnabled(true);
     ui->btnPrevStep->setEnabled(false);
