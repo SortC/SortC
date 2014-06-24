@@ -63,12 +63,10 @@ void BaseSortWidget::on_btnPlayPause_toggled(bool checked)
     ui->btnReset->setEnabled(!checked);
 
     if(checked){
-        QString pause = "PAUSE";
-        ui->btnPlayPause->setText(pause);
+        ui->btnPlayPause->setIcon(QIcon(":/view/icons/pause.png"));
         timer->start(interval);
     }else{
-        QString play = "PLAY";
-        ui->btnPlayPause->setText(play);
+        ui->btnPlayPause->setIcon(QIcon(":/view/icons/play.png"));
         timer->stop();
         if(algoCtrl->getCurrentStep()->getNumber() == 1){
             ui->btnPrevStep->setEnabled(false);

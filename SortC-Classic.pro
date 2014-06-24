@@ -67,3 +67,6 @@ FORMS    += view/SortView.ui \
     view/widgets/BaseSortWidget.ui \
     view/InfoView.ui \
     view/widgets/SortValue.ui
+
+RESOURCES += \
+    SortC-resources.qrc
