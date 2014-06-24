@@ -46,11 +46,9 @@ void ConfiguratorView::on_startBtn_clicked()
     else
     {
         srand(time(NULL));
-        int maxValue = 100;
-
         for (int i = 0; i < anzWerte; i++)
         {
-            zahlen[i] = rand() % maxValue;
+            zahlen[i] = (rand() % maxValue) + 1;
         }
     }
 

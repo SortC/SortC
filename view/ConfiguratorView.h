@@ -7,6 +7,8 @@
 #include <cstdlib>
 #include <time.h>
 
+const int maxValue = 100;
+
 namespace Ui {
 class ConfiguratorView;
 }
