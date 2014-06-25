@@ -7,10 +7,12 @@ SortView::SortView(QWidget *parent, int* startTuple, int numbOfValues) :
     ui(new Ui::SortView){
     ui->setupUi(this);
     this->startTuple = new int[numbOfValues];
+
     for (int i = 0; i < numbOfValues; i++)
     {
         this->startTuple[i] = startTuple[i];
     }
+
     this->numbOfValues = numbOfValues;
     controller = new Controller(startTuple, numbOfValues);
 

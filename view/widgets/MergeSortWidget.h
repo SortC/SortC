@@ -2,6 +2,7 @@
 #define MERGESORTWIDGET_H
 
 #include "view/widgets/BaseSortWidget.h"
+#include "view/widgets/SortValue.h"
 
 class MergeSortWidget : public BaseSortWidget
 {
@@ -31,7 +32,9 @@ private:
      * Konkrete Funktion zum Auswerten eines Schrittes fuer MergeSort
      */
     void handleStep();
-
+    SortValue** displayValues;
+    SortValue** helpArray;
+    SortValue** space;
 };
 
 #endif // MERGESORTWIDGET_H

@@ -28,7 +28,8 @@ void SortValue::setValue(int value)
 
 void SortValue::setAction(Action action)
 {
-    if(action != currentAction){
+    if(action != currentAction)
+    {
         switch (action)
         {
         case NONE:
