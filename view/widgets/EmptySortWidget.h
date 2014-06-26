@@ -2,6 +2,7 @@
 #define EMPTYSORTWIDGET_H
 
 #include "view/widgets/BaseSortWidget.h"
+#include <QPixmap>
 /**
  * @brief The EmptySortWidget class
  *

@@ -7,5 +7,6 @@
         <file>view/icons/reset.png</file>
         <file>view/icons/info.png</file>
         <file>view/icons/logo.png</file>
+        <file>view/icons/construction.png</file>
     </qresource>
 </RCC>
