@@ -11,7 +11,7 @@ QuickSortWidget::QuickSortWidget(QWidget *parent, AlgorithmController* algoCtrl,
             max = startTuple[i];
     }
     for (int i = 0; i < numbOfValues; i++){
-        newValue = new SortValue(this, startTuple[i], max);
+        newValue = new SortValue(this, startTuple[i], max, i);
         ui->horLayoutSorting->addWidget(newValue,0,Qt::AlignBottom);
         displayValues[i] = newValue;
     }

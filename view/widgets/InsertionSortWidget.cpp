@@ -13,7 +13,7 @@ InsertionSortWidget::InsertionSortWidget(QWidget *parent, AlgorithmController* a
     }
 
     for (int i = 0; i < numbOfValues; i++){
-        newValue = new SortValue(0,startTuple[i], max);
+        newValue = new SortValue(0,startTuple[i], max, i);
         ui->horLayoutSorting->addWidget(newValue,0,Qt::AlignBottom);
         displayValues[i] = newValue;
     }
