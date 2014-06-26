@@ -11,6 +11,7 @@ SortValue::SortValue(QWidget *parent, int value, int maxValue, int arrayIndex) :
     this->arrayIndex = arrayIndex;
     ui->valueLabel->setText(QString::number(value));
     ui->arrayLabel->setText("[" + QString::number(arrayIndex) + "]");
+    valueVisible = true;
     this->setAction(NONE);
 }
 
@@ -35,33 +36,34 @@ void SortValue::setAction(Action action)
         switch (action)
         {
         case NONE:
-            ui->valueFrame->setStyleSheet("background-color: rgb(190, 210, 230); border-style: outset; border-width: 2px; border-color: black; border-radius: 5px;");
+            styleSheetBuffer = "background-color: rgb(190, 210, 230); border-style: outset; border-width: 2px; border-color: black; border-radius: 5px;";
             break;
         case COMP:
-            ui->valueFrame->setStyleSheet("background-color: rgb(105, 125, 250); border-style: outset; border-width: 2px; border-color: black; border-radius: 5px;");
+            styleSheetBuffer = "background-color: rgb(105, 125, 250); border-style: outset; border-width: 2px; border-color: black; border-radius: 5px;";
             break;
         case SWAP:
-            ui->valueFrame->setStyleSheet("background-color: rgb(117, 255, 105); border-style: outset; border-width: 2px; border-color: black; border-radius: 5px;");
+            styleSheetBuffer = "background-color: rgb(117, 255, 105); border-style: outset; border-width: 2px; border-color: black; border-radius: 5px;";
             break;
         case MARK:
-            ui->valueFrame->setStyleSheet("background-color: rgb(237, 226, 192); border-style: outset; border-width: 2px; border-color: black; border-radius: 5px;");
+            styleSheetBuffer = "background-color: rgb(237, 226, 192); border-style: outset; border-width: 2px; border-color: black; border-radius: 5px;";
             break;
         case MIN:
-            ui->valueFrame->setStyleSheet("background-color: rgb(252, 96, 96); border-style: outset; border-width: 2px; border-color: black; border-radius: 5px;");
+            styleSheetBuffer = "background-color: rgb(252, 96, 96); border-style: outset; border-width: 2px; border-color: black; border-radius: 5px;";
             break;
         case PIVOT:
-            ui->valueFrame->setStyleSheet("background-color: rgb(252, 96, 96); border-style: outset; border-width: 2px; border-color: black; border-radius: 5px;");
+            styleSheetBuffer = "background-color: rgb(252, 96, 96); border-style: outset; border-width: 2px; border-color: black; border-radius: 5px;";
             break;
         case CPY:
-            ui->valueFrame->setStyleSheet("background-color: rgb(192, 0, 240); border-style: outset; border-width: 2px; border-color: black; border-radius: 5px;");
+            styleSheetBuffer = "background-color: rgb(192, 0, 240); border-style: outset; border-width: 2px; border-color: black; border-radius: 5px;";
             break;
         case R_CPY:
-            ui->valueFrame->setStyleSheet("background-color: rgb(234, 255, 0); border-style: outset; border-width: 2px; border-color: black; border-radius: 5px;");
+            styleSheetBuffer = "background-color: rgb(234, 255, 0); border-style: outset; border-width: 2px; border-color: black; border-radius: 5px;";
             break;
         }
         currentAction = action;
-        styleSheetBuffer = ui->valueFrame->styleSheet();
-        ui->valueLabel->show();
+        if(valueVisible){
+            ui->valueFrame->setStyleSheet(styleSheetBuffer);
+        }
     }
 }
 
@@ -83,12 +85,18 @@ void SortValue::resizeEvent(QResizeEvent* event)
 
 void SortValue::showValue()
 {
-    ui->valueFrame->setStyleSheet(styleSheetBuffer);
-    ui->valueLabel->show();
+    if(!valueVisible){
+        ui->valueFrame->setStyleSheet(styleSheetBuffer);
+        ui->valueLabel->show();
+        valueVisible = true;
+    }
 }
 
 void SortValue::hideValue()
 {
-    ui->valueFrame->setStyleSheet("background: transparent; border: 1px solid transparent;");
-    ui->valueLabel->hide();
+    if(valueVisible){
+        ui->valueFrame->setStyleSheet("background: transparent; border: 1px solid transparent;");
+        ui->valueLabel->hide();
+        valueVisible = false;
+    }
 }

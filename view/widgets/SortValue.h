@@ -21,6 +21,8 @@ public:
     void setValue(int value);
     int getValue(){return value;}
 
+    bool getValueVisible(){return valueVisible;}
+
     void setAction(Action action);
     void resizeValue();
 
@@ -38,6 +40,7 @@ private:
     int maxValue;
     QString styleSheetBuffer;
     Action currentAction;
+    bool valueVisible;
 };
 
 #endif // SORTVALUE_H
