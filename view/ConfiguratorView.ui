@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>SortC - Konfigurator</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../SortC-resources.qrc">
+    <normaloff>:/view/icons/logo.png</normaloff>:/view/icons/logo.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -174,7 +178,9 @@
   <tabstop>sortCheckBox</tabstop>
   <tabstop>sortDierectionComboBox</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../SortC-resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>sortCheckBox</sender>
