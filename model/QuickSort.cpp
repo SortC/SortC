@@ -18,9 +18,6 @@ void QuickSort::sort(){
 		return; // Invalid index range
 
 	vector<std::pair<int, int> > list;
-
-	//Step *newStep;
-
 	list.push_back(pair<int, int>(left, right));
 
 	while(list.size() != 0)
@@ -50,7 +47,7 @@ int QuickSort::partition(int a[], int left, int right)
     buffer << "Betrachte Bereich   [" << left <<"] bis  [" << right << "]" ;
     steps.push_back(new Step(left, right, Step::MARK, ++numbOfSteps, buffer.str()));
 	stringstream buffer2;
-    buffer2 << "Setze Pivot auf\t      [" << right << "]" ;
+    buffer2 << "Setze Pivot auf\t      [" << pivotStelle << "]" ;
     steps.push_back(new Step(pivotStelle, 0, Step::PIVOT, ++numbOfSteps, buffer2.str() ));
 	while (true)
 	{
@@ -69,8 +66,7 @@ int QuickSort::partition(int a[], int left, int right)
 			right--;
 		}
 
-
-		stringstream buffer;
+        stringstream buffer;
         buffer << "Pruefe ob \tLZ   [" << left << "]  < RZ[" << right << "]" ;
         steps.push_back(new Step(pivotStelle, left,Step::COMP, ++numbOfSteps, buffer.str() ));
 
@@ -89,7 +85,7 @@ int QuickSort::partition(int a[], int left, int right)
 		{
 			stringstream buffer;
             buffer << "Setze Pivot auf\t      [" << right << "]" ;
-            //steps.push_back(new Step(right, 0, Step::PIVOT, ++numbOfSteps, buffer.str() ));
+            steps.push_back(new Step(right, 0, Step::PIVOT, ++numbOfSteps, buffer.str() ));
 			return right;
 		}
 	}
