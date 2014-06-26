@@ -35,7 +35,8 @@ SOURCES += main.cpp\
     view/widgets/QuickSortWidget.cpp \
     view/widgets/SelectionSortwidget.cpp \
     view/InfoView.cpp \
-    view/widgets/SortValue.cpp
+    view/widgets/SortValue.cpp \
+    view/widgets/OwnTupleView.cpp
 
 HEADERS  += view/SortView.h \
     model/Algorithm.h \
@@ -60,13 +61,15 @@ HEADERS  += view/SortView.h \
     view/widgets/QuickSortWidget.h \
     view/widgets/SelectionSortWidget.h \
     view/InfoView.h \
-    view/widgets/SortValue.h
+    view/widgets/SortValue.h \
+    view/widgets/OwnTupleView.h
 
 FORMS    += view/SortView.ui \
     view/ConfiguratorView.ui \
     view/widgets/BaseSortWidget.ui \
     view/InfoView.ui \
-    view/widgets/SortValue.ui
+    view/widgets/SortValue.ui \
+    view/widgets/OwnTupleView.ui
 
 RESOURCES += \
     SortC-resources.qrc

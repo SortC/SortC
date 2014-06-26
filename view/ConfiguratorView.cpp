@@ -9,6 +9,7 @@ ConfiguratorView::ConfiguratorView(QWidget *parent) :
     ui(new Ui::ConfiguratorView)
 {
     ui->setupUi(this);
+
 }
 
 ConfiguratorView::~ConfiguratorView()
@@ -62,4 +63,52 @@ void ConfiguratorView::on_startBtn_clicked()
         sortViewtab[count] = sortView;
         count++;
     }
+}
+
+
+void ConfiguratorView::on_btnOwnValues_clicked()
+{
+    int anzValues = ui->valueSlider->value();
+
+    otv = new OwnTupleView(this, anzValues);
+   // otv->childEvent(QChildEvent.accept(););
+    otv->show();
+}
+
+void ConfiguratorView::on_radioButtonRandomValues_toggled(bool checked)
+{
+    ui->radioButtonOwnValues->setChecked(!checked);
+    if (checked) {
+        ui->btnOwnValues->setEnabled(false);
+        ui->sortCheckBox->setEnabled(true);
+        ui->startBtn->setEnabled(true);
+    }
+}
+
+void ConfiguratorView::on_radioButtonOwnValues_toggled(bool checked)
+{
+    ui->radioButtonRandomValues->setChecked(!checked);
+    if(checked) {
+       ui->btnOwnValues->setEnabled(true);
+       ui->sortCheckBox->setEnabled(false);
+       ui->startBtn->setEnabled(false);
+    } else{
+        on_radioButtonRandomValues_toggled(!checked);
+    }
+}
+
+bool ConfiguratorView::eventFilter(QObject *qobj, QEvent *qev)
+{
+    int anzWerte = ui->valueSlider->value();
+    int zahlen[anzWerte];
+
+    for (int i = 0; i < anzWerte; i++)
+    {
+        zahlen[i] = otv->getBoxes()[i]->value();
+    }
+    SortView* sortView = new SortView(0, zahlen , anzWerte);
+    sortView->show();
+    sortViewtab[count] = sortView;
+    count++;
+    return true;
 }
