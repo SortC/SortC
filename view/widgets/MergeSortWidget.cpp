@@ -69,7 +69,7 @@ void MergeSortWidget::handleStep()
         displayValues[val2]->setAction(SortValue::COMP);
         break;
     case Step::R_CPY:
-        helpArray[val1+1]->setAction(SortValue::CPY);
+        helpArray[val1+1]->setAction(SortValue::R_CPY);
         displayValues[val2]->setAction(SortValue::NONE);
 
         displayValues[val2]->setValue(helpArray[val1+1]->getValue());

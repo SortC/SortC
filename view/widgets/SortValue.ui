@@ -87,7 +87,7 @@
          <bool>false</bool>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: red;
+         <string notr="true">background-color: rgb(190, 210, 230);
 border-style: outset;
 border-width: 2px;
 border-color: black;
