@@ -36,6 +36,7 @@ private:
     int arrayIndex;
     int value;
     int maxValue;
+    QString styleSheetBuffer;
     Action currentAction;
 };
 

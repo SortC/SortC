@@ -60,6 +60,8 @@ void SortValue::setAction(Action action)
             break;
         }
         currentAction = action;
+        styleSheetBuffer = ui->valueFrame->styleSheet();
+        ui->valueLabel->show();
     }
 }
 
@@ -81,12 +83,12 @@ void SortValue::resizeEvent(QResizeEvent* event)
 
 void SortValue::showValue()
 {
-    ui->valueFrame->show();
+    ui->valueFrame->setStyleSheet(styleSheetBuffer);
     ui->valueLabel->show();
 }
 
 void SortValue::hideValue()
 {
-    ui->valueFrame->hide();
+    ui->valueFrame->setStyleSheet("background: transparent; border: 1px solid transparent;");
     ui->valueLabel->hide();
 }
