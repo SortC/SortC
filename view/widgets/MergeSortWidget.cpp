@@ -15,13 +15,13 @@ MergeSortWidget::MergeSortWidget(QWidget *parent, AlgorithmController* algoCtrl,
     }
 
     for (int i = 0; i < numbOfValues; i++){
-        newValue = new SortValue(0, startTuple[i], max);
+        newValue = new SortValue(0, startTuple[i], max, i);
         ui->horLayoutSorting->addWidget(newValue,0,Qt::AlignBottom);
         displayValues[i] = newValue;
     }
 
     for (int i = 0; i <= numbOfValues; i++){
-        tempValues = new SortValue(0, i-1, max);
+        tempValues = new SortValue(0, i-1, max, i);
         ui->horLayoutSorting->addWidget(tempValues,0,Qt::AlignBottom);
         helpArray[i] = tempValues;
 

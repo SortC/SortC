@@ -1,14 +1,16 @@
 #include "SortValue.h"
 #include "ui_SortValue.h"
 
-SortValue::SortValue(QWidget *parent, int value, int maxValue) :
+SortValue::SortValue(QWidget *parent, int value, int maxValue, int arrayIndex) :
     QWidget(parent),
     ui(new Ui::SortValue)
 {
     ui->setupUi(this);
     this->maxValue = maxValue;
     this->value = value;
+    this->arrayIndex = arrayIndex;
     ui->valueLabel->setText(QString::number(value));
+    ui->arrayLabel->setText("[" + QString::number(arrayIndex) + "]");
     this->setAction(NONE);
 }
 
@@ -63,7 +65,7 @@ void SortValue::setAction(Action action)
 
 void SortValue::resizeValue()
 {
-    int currentSpace = ui->Container->height() - 30;
+    int currentSpace = ui->Container->height() - 40;
     if(currentSpace >= 0){
         currentSpace = (int)round((currentSpace * value) / maxValue);
         ui->valueFrame->setMinimumHeight(currentSpace);
@@ -75,4 +77,16 @@ void SortValue::resizeEvent(QResizeEvent* event)
 {
     resizeValue();
     event->accept();
+}
+
+void SortValue::showValue()
+{
+    ui->valueFrame->show();
+    ui->valueLabel->show();
+}
+
+void SortValue::hideValue()
+{
+    ui->valueFrame->hide();
+    ui->valueLabel->hide();
 }

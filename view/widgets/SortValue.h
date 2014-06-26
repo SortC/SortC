@@ -15,19 +15,25 @@ class SortValue : public QWidget
 
 public:
     enum Action {NONE, COMP, SWAP, MARK, MIN, PIVOT, CPY, R_CPY};
-    explicit SortValue(QWidget *parent = 0, int value = 0, int maxValue = 100);
+    explicit SortValue(QWidget *parent = 0, int value = 0, int maxValue = 100, int arrayIndex = 0);
     ~SortValue();
 
     void setValue(int value);
     int getValue(){return value;}
+
     void setAction(Action action);
     void resizeValue();
+
+    void showValue();
+    void hideValue();
+
     void resizeEvent ( QResizeEvent * event );
 
 private slots:
 
 private:
     Ui::SortValue *ui;
+    int arrayIndex;
     int value;
     int maxValue;
     Action currentAction;
