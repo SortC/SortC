@@ -36,8 +36,6 @@ public:
       */
     ~BaseSortWidget();
 
-    bool infoViewOpen;
-
 public slots:
     /**
      * @brief on_btnPlayPause_toggled
