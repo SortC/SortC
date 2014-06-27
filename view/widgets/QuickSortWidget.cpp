@@ -46,11 +46,6 @@ void QuickSortWidget::handleStep()
         displayValues[val1]->setValue(displayValues[val2]->getValue());
         displayValues[val2]->setValue(buffer);
         break;
-    case Step::END:
-        ui->btnPlayPause->setChecked(false);
-        ui->btnNextStep->setEnabled(false);
-        ui->btnPlayPause->setEnabled(false);
-        break;
     case Step::MARK:
         for(int i = val1; i <= val2; i++){
             displayValues[i]->setAction(SortValue::MARK);
@@ -58,6 +53,13 @@ void QuickSortWidget::handleStep()
         break;
     case Step::PIVOT:
         displayValues[val1]->setAction(SortValue::PIVOT);
+        break;
+    case Step::END:
+        ui->btnPlayPause->setChecked(false);
+        ui->btnNextStep->setEnabled(false);
+        ui->btnPlayPause->setEnabled(false);
+        break;
+
     default:
         break;
     }
