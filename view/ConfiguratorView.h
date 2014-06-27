@@ -8,6 +8,9 @@
 #include <cstdlib>
 #include <time.h>
 
+
+#include <iostream>
+
 const int maxValue = 100;
 
 namespace Ui {
@@ -24,9 +27,7 @@ public:
 
     void decrementCount();
 
-
-
-private slots:
+private slots:    
     void on_startBtn_clicked();
 
     void on_btnOwnValues_clicked();
@@ -35,16 +36,17 @@ private slots:
 
     void on_radioButtonOwnValues_toggled(bool checked);
 
+    void newOwnTuple(int* ownTuple);
 
-
-protected:
-  bool eventFilter(QObject *qobj, QEvent *qev);
+    void on_valueSlider_valueChanged(int value);
 
 private:
     OwnTupleView *otv;
     Ui::ConfiguratorView *ui;
     SortView* sortViewtab[2];
     static int count;
+    int numberOfValues;
+    int* ownTuple;
 };
 
 #endif // CONFIGURATORVIEW_H

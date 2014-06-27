@@ -63,6 +63,9 @@
             <property name="text">
              <string>Anzahl Werte:</string>
             </property>
+            <property name="buddy">
+             <cstring>valueSpinBox</cstring>
+            </property>
            </widget>
           </item>
           <item>
@@ -231,7 +234,7 @@
   </connection>
   <connection>
    <sender>valueSlider</sender>
-   <signal>sliderMoved(int)</signal>
+   <signal>valueChanged(int)</signal>
    <receiver>valueSpinBox</receiver>
    <slot>setValue(int)</slot>
    <hints>

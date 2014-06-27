@@ -9,6 +9,7 @@ ConfiguratorView::ConfiguratorView(QWidget *parent) :
     ui(new Ui::ConfiguratorView)
 {
     ui->setupUi(this);
+    this->numberOfValues = ui->valueSlider->value();
 
 }
 
@@ -71,7 +72,6 @@ void ConfiguratorView::on_btnOwnValues_clicked()
     int anzValues = ui->valueSlider->value();
 
     otv = new OwnTupleView(this, anzValues);
-   // otv->childEvent(QChildEvent.accept(););
     otv->show();
 }
 
@@ -97,18 +97,17 @@ void ConfiguratorView::on_radioButtonOwnValues_toggled(bool checked)
     }
 }
 
-bool ConfiguratorView::eventFilter(QObject *qobj, QEvent *qev)
+void ConfiguratorView::newOwnTuple(int *ownTuple)
 {
-    int anzWerte = ui->valueSlider->value();
-    int zahlen[anzWerte];
+    this->ownTuple = ownTuple;
 
-    for (int i = 0; i < anzWerte; i++)
-    {
-        zahlen[i] = otv->getBoxes()[i]->value();
+    for(int i = 0; i<numberOfValues; i++){
+        std::cout << this->ownTuple[i] <<", ";
     }
-    SortView* sortView = new SortView(0, zahlen , anzWerte);
-    sortView->show();
-    sortViewtab[count] = sortView;
-    count++;
-    return true;
+    std::cout << std::endl;
+}
+
+void ConfiguratorView::on_valueSlider_valueChanged(int value)
+{
+    this->numberOfValues = value;
 }

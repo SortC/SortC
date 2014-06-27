@@ -15,18 +15,22 @@ class OwnTupleView : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit OwnTupleView(QWidget *parent = 0, int anzValues = 0);
+    explicit OwnTupleView(QWidget *parent = 0, int numbOfValues = 0);
     ~OwnTupleView();
 
-    QSpinBox **getBoxes() const;
+signals:
+    void ownTupleCreated(int* i);
 
 private slots:
     void on_btnFinish_clicked();
 
 private:
     Ui::OwnTupleView *ui;
-    QSpinBox** boxes;
+    int numbOfValues;
+    QSpinBox** valueBoxes;
     QLabel** labels;
+    QWidget* parent;
+    int * ownTuple;
 };
 
 #endif // OWNTUPLEVIEW_H

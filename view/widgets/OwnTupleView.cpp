@@ -1,42 +1,43 @@
 #include "OwnTupleView.h"
 #include "ui_OwnTupleView.h"
 
-OwnTupleView::OwnTupleView(QWidget *parent, int anzValues) :
+OwnTupleView::OwnTupleView(QWidget *parent, int numbOfValues) :
     QMainWindow(parent),
     ui(new Ui::OwnTupleView)
 {
     ui->setupUi(this);
-    boxes = new QSpinBox*[anzValues];
-    labels = new QLabel*[anzValues];
-    bool isAnzEven;
-    int anzElementsPerLine = anzValues;
-    int anzElementsGesamt = anzValues;
+    this->numbOfValues = numbOfValues;
+    valueBoxes = new QSpinBox*[numbOfValues];
+    labels = new QLabel*[numbOfValues];
+    bool isNumbEven;
+    int numbOfElementsPerLine = numbOfValues;
+    int numbOfElements = numbOfValues;
 
-    if(anzValues > 17) {
-    if(anzValues % 2 == 0){
-        anzElementsPerLine = anzValues / 2;
-        isAnzEven = true;
+    if(numbOfValues > 17) {
+    if(numbOfValues % 2 == 0){
+        numbOfElementsPerLine = numbOfValues / 2;
+        isNumbEven = true;
         }
         else {
-            anzElementsPerLine = anzValues / 2  + 1;
-            isAnzEven = false;
-            anzElementsGesamt = anzElementsPerLine * 2;
+            numbOfElementsPerLine = numbOfValues / 2  + 1;
+            isNumbEven = false;
+            numbOfElements = numbOfElementsPerLine * 2;
         }
     }
 
-    for(int i = 0; i < anzElementsGesamt; i++){
+    for(int i = 0; i < numbOfElements; i++){
         QSpinBox *sbox = new QSpinBox(this);
         sbox->setMaximum(99);
         sbox->setMinimum(1);
         sbox->setValue(1);
-        boxes[i] = sbox;
+        valueBoxes[i] = sbox;
 
         QLabel *lbl = new QLabel(this);
         lbl->setText(QString::number(i));
         labels[i]= lbl;
 
-        if(i >= anzElementsPerLine) { // 2. Zeile einführen
-            if(!isAnzEven && i == anzElementsGesamt -1 ) {  // dann letztes Element unsichtbar
+        if(i >= numbOfElementsPerLine) { // 2. Zeile einführen
+            if(!isNumbEven && i == numbOfElements -1 ) {  // dann letztes Element unsichtbar
                 sbox->setEnabled(false);
                 lbl->setEnabled(false);
                 ui->horizontalLayoutValues2->addWidget(sbox);
@@ -52,6 +53,9 @@ OwnTupleView::OwnTupleView(QWidget *parent, int anzValues) :
             ui->horizontalLayoutLabels->addWidget(lbl);
         }
     }
+    ownTuple = new int[numbOfValues];
+    this->parent = parent;
+    connect(this, SIGNAL(ownTupleCreated(int*)), parent, SLOT(newOwnTuple(int*)));
 }
 
 OwnTupleView::~OwnTupleView()
@@ -59,15 +63,12 @@ OwnTupleView::~OwnTupleView()
     delete ui;
 }
 
-QSpinBox **OwnTupleView::getBoxes() const
-{
-    return boxes;
-}
-
 void OwnTupleView::on_btnFinish_clicked()
 {
-
-    ui->btnFinish->installEventFilter(this->parent());
+    for(int i = 0; i < numbOfValues; i++){
+        ownTuple[i] = valueBoxes[i]->value();
+    }
+    emit ownTupleCreated(ownTuple);
 }
 
 
