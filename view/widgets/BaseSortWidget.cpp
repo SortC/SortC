@@ -17,7 +17,6 @@ BaseSortWidget::BaseSortWidget(QWidget *parent, AlgorithmController* algoCtrl, i
     this->interval = ui->intervalSpeedSlider->value();
 
     this->url = QString("http://www.wikipedia.de");
-    this->infoViewOpen = false;
 }
 
 BaseSortWidget::~BaseSortWidget()
@@ -94,6 +93,5 @@ void BaseSortWidget::on_btnReset_clicked()
 
 void BaseSortWidget::on_infoButton_clicked()
 {
-    InfoView* infoView = new InfoView(0,this->url);
-    infoView->show();
+    QDesktopServices::openUrl(QUrl(this->url));
 }

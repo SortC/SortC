@@ -5,9 +5,10 @@
 #include <QFrame>
 #include <QTimer>
 #include <QThread>
+#include <QDesktopServices>
+#include <QUrl>
 #include "controller/AlgorithmController.h"
 #include "ui_BaseSortWidget.h"
-#include "view/InfoView.h"
 
 namespace Ui {
 class BaseSortWidget;
