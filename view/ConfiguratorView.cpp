@@ -9,6 +9,8 @@ ConfiguratorView::ConfiguratorView(QWidget *parent) :
     ui(new Ui::ConfiguratorView)
 {
     ui->setupUi(this);
+    this->numberOfValues = ui->valueSlider->value();
+
 }
 
 ConfiguratorView::~ConfiguratorView()
@@ -62,4 +64,50 @@ void ConfiguratorView::on_startBtn_clicked()
         sortViewtab[count] = sortView;
         count++;
     }
+}
+
+
+void ConfiguratorView::on_btnOwnValues_clicked()
+{
+    int anzValues = ui->valueSlider->value();
+
+    otv = new OwnTupleView(this, anzValues);
+    otv->show();
+}
+
+void ConfiguratorView::on_radioButtonRandomValues_toggled(bool checked)
+{
+    ui->radioButtonOwnValues->setChecked(!checked);
+    if (checked) {
+        ui->btnOwnValues->setEnabled(false);
+        ui->sortCheckBox->setEnabled(true);
+        ui->startBtn->setEnabled(true);
+    }
+}
+
+void ConfiguratorView::on_radioButtonOwnValues_toggled(bool checked)
+{
+    ui->radioButtonRandomValues->setChecked(!checked);
+    if(checked) {
+       ui->btnOwnValues->setEnabled(true);
+       ui->sortCheckBox->setEnabled(false);
+       ui->startBtn->setEnabled(false);
+    } else{
+        on_radioButtonRandomValues_toggled(!checked);
+    }
+}
+
+void ConfiguratorView::newOwnTuple(int *ownTuple)
+{
+    this->ownTuple = ownTuple;
+
+    for(int i = 0; i<numberOfValues; i++){
+        std::cout << this->ownTuple[i] <<", ";
+    }
+    std::cout << std::endl;
+}
+
+void ConfiguratorView::on_valueSlider_valueChanged(int value)
+{
+    this->numberOfValues = value;
 }

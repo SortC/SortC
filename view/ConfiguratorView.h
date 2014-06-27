@@ -3,9 +3,13 @@
 
 #include <QMainWindow>
 #include "SortView.h"
+#include "widgets/OwnTupleView.h"
 #include <qmessagebox.h>
 #include <cstdlib>
 #include <time.h>
+
+
+#include <iostream>
 
 const int maxValue = 100;
 
@@ -23,13 +27,26 @@ public:
 
     void decrementCount();
 
-private slots:
+private slots:    
     void on_startBtn_clicked();
 
+    void on_btnOwnValues_clicked();
+
+    void on_radioButtonRandomValues_toggled(bool checked);
+
+    void on_radioButtonOwnValues_toggled(bool checked);
+
+    void newOwnTuple(int* ownTuple);
+
+    void on_valueSlider_valueChanged(int value);
+
 private:
+    OwnTupleView *otv;
     Ui::ConfiguratorView *ui;
     SortView* sortViewtab[2];
     static int count;
+    int numberOfValues;
+    int* ownTuple;
 };
 
 #endif // CONFIGURATORVIEW_H
