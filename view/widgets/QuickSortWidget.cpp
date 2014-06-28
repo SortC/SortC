@@ -23,46 +23,55 @@ QuickSortWidget::QuickSortWidget(QWidget *parent, AlgorithmController* algoCtrl,
 
 void QuickSortWidget::handleStep()
 {
-    BaseSortWidget::handleStep();
+    try {
 
-    for(int i = 0; i < numbOfValues; i++) {
-        displayValues[i]->setAction(SortValue::NONE);
-    }
+        BaseSortWidget::handleStep();
 
-    int val1, val2, buffer;
-
-    val1 = algoCtrl->getCurrentStep()->getFirstValue();
-    val2 = algoCtrl->getCurrentStep()->getSecondValue();
-
-    switch (algoCtrl->getCurrentStep()->getOperation()) {
-    case Step::COMP:
-        displayValues[val1]->setAction(SortValue::COMP);
-        displayValues[val2]->setAction(SortValue::COMP);
-        break;
-    case Step::SWAP:
-        displayValues[val1]->setAction(SortValue::SWAP);
-        displayValues[val2]->setAction(SortValue::SWAP);
-        buffer = displayValues[val1]->getValue();
-        displayValues[val1]->setValue(displayValues[val2]->getValue());
-        displayValues[val2]->setValue(buffer);
-        break;
-    case Step::MARK:
-        for(int i = val1; i <= val2; i++){
-            displayValues[i]->setAction(SortValue::MARK);
+        for(int i = 0; i < numbOfValues; i++) {
+            displayValues[i]->setAction(SortValue::NONE);
         }
-        break;
-    case Step::PIVOT:
-        displayValues[val1]->setAction(SortValue::PIVOT);
-        break;
-    case Step::END:
-        ui->btnPlayPause->setChecked(false);
-        ui->btnNextStep->setEnabled(false);
-        ui->btnPlayPause->setEnabled(false);
-        break;
 
-    default:
-        break;
+        int val1, val2, buffer;
+
+        val1 = algoCtrl->getCurrentStep()->getFirstValue();
+        val2 = algoCtrl->getCurrentStep()->getSecondValue();
+
+        switch (algoCtrl->getCurrentStep()->getOperation()) {
+        case Step::COMP:
+            displayValues[val1]->setAction(SortValue::COMP);
+            displayValues[val2]->setAction(SortValue::COMP);
+            break;
+        case Step::SWAP:
+            displayValues[val1]->setAction(SortValue::SWAP);
+            displayValues[val2]->setAction(SortValue::SWAP);
+            buffer = displayValues[val1]->getValue();
+            displayValues[val1]->setValue(displayValues[val2]->getValue());
+            displayValues[val2]->setValue(buffer);
+            break;
+        case Step::MARK:
+            for(int i = val1; i < val2; i++){
+                displayValues[i]->setAction(SortValue::MARK);
+            }
+            break;
+        case Step::PIVOT:
+            displayValues[val1]->setAction(SortValue::PIVOT);
+            break;
+        case Step::END:
+            ui->btnPlayPause->setChecked(false);
+            ui->btnNextStep->setEnabled(false);
+            ui->btnPlayPause->setEnabled(false);
+            break;
+
+        default:
+            break;
+        }
     }
+    catch (exception e) {
+        int i = 0;
+
+    }
+
+
 }
 
 void QuickSortWidget::on_btnReset_clicked(){
