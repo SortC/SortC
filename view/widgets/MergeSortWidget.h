@@ -34,7 +34,6 @@ private:
     void handleStep();
     SortValue** displayValues;
     SortValue** helpArray;
-    SortValue** space;
 };
 
 #endif // MERGESORTWIDGET_H

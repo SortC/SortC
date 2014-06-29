@@ -20,11 +20,11 @@ MergeSortWidget::MergeSortWidget(QWidget *parent, AlgorithmController* algoCtrl,
         displayValues[i] = newValue;
     }
 
-    for (int i = 0; i <= numbOfValues; i++){
-        tempValues = new SortValue(0, i-1, max, i);
-        ui->horLayoutSorting->addWidget(tempValues,0,Qt::AlignBottom);
+    for (int i = 0; i < numbOfValues; i++){
+        tempValues = new SortValue(0, i, max, i);
+        ui->horizontalLayout_4->addWidget(tempValues,0,Qt::AlignBottom);
         helpArray[i] = tempValues;
-
+        helpArray[i]->hideValue();
     }
 
     this->url = QString("http://de.wikipedia.org/wiki/Mergesort");
@@ -35,7 +35,7 @@ MergeSortWidget::MergeSortWidget(QWidget *parent, AlgorithmController* algoCtrl,
 void MergeSortWidget::handleStep()
 {
     bool isMarked;
-    int val1, val2, buffer;
+    int val1, val2;
     int markedValues;
 
     BaseSortWidget::handleStep();
@@ -69,16 +69,17 @@ void MergeSortWidget::handleStep()
         displayValues[val2]->setAction(SortValue::COMP);
         break;
     case Step::R_CPY:
-        helpArray[val1+1]->setAction(SortValue::R_CPY);
+        helpArray[val1]->setAction(SortValue::R_CPY);
         displayValues[val2]->setAction(SortValue::NONE);
 
-        displayValues[val2]->setValue(helpArray[val1+1]->getValue());
+        displayValues[val2]->setValue(helpArray[val1]->getValue());
         break;
     case Step::CPY:
         displayValues[val1]->setAction(SortValue::CPY);
-        helpArray[val2+1]->setAction(SortValue::CPY);
+        helpArray[val2]->setAction(SortValue::CPY);
 
-        helpArray[val2+1]->setValue(displayValues[val1]->getValue());
+        helpArray[val2]->setValue(displayValues[val1]->getValue());
+        helpArray[val2]->showValue();
 
         break;
     case Step::MARK:
@@ -95,7 +96,7 @@ void MergeSortWidget::handleStep()
         ui->btnPlayPause->setChecked(false);
         ui->btnNextStep->setEnabled(false);
         ui->btnPlayPause->setEnabled(false);
-        for (int i = 0; i <= numbOfValues-1; i++)
+        for (int i = 0; i < numbOfValues; i++)
         {
             displayValues[val1]->setAction(SortValue::NONE);
             displayValues[val1+i]->setAction(SortValue::NONE);
