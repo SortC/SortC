@@ -87,9 +87,9 @@
          <bool>false</bool>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(190, 210, 230);
+         <string notr="true">background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ebf4fd, stop: 0.5 #bed2e6);
 border-style: outset;
-border-width: 2px;
+border-width: 0px;
 border-color: black;
 border-radius: 5px;</string>
         </property>
