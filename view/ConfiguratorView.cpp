@@ -99,7 +99,9 @@ void ConfiguratorView::on_radioButtonOwnValues_toggled(bool checked)
     if(checked) {
        ui->btnOwnValues->setEnabled(true);
        ui->sortCheckBox->setEnabled(false);
-       ui->startBtn->setEnabled(false);
+       if(!ownValuesValid){
+            ui->startBtn->setEnabled(false);
+       }
     } else{
         on_radioButtonRandomValues_toggled(!checked);
     }
@@ -115,4 +117,6 @@ void ConfiguratorView::on_valueSlider_valueChanged(int value)
 {
     this->numberOfValues = value;
     ownValuesValid = false;
+    if(ui->radioButtonOwnValues->isChecked())
+        ui->startBtn->setEnabled(false);
 }
