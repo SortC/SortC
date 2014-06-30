@@ -20,14 +20,13 @@ MergeSortWidget::MergeSortWidget(QWidget *parent, AlgorithmController* algoCtrl,
         displayValues[i] = newValue;
     }
 
-    ui->horizontalLayout_4->setSizeConstraint(ui->horizontalLayout_4->SetFixedSize);
-    //ui->horizontalLayout_4->
+    //ui->horizontalLayout_4->setSizeConstraint(ui->horizontalLayout_4->SetFixedSize);
     for (int i = 0; i < numbOfValues; i++){
         tempValues = new SortValue(0, i, max, i);
         ui->horizontalLayout_4->addWidget(tempValues,0,Qt::AlignBottom);
 
         helpArray[i] = tempValues;
-        helpArray[i]->setFixedHeight(180);
+        helpArray[i]->setFixedHeight(190);
         helpArray[i]->hideValue();
     }
 
@@ -115,6 +114,10 @@ void MergeSortWidget::on_btnReset_clicked(){
 
     for(int i = 0; i<numbOfValues; i++){
         displayValues[i]->setValue(startTuple[i]);
+    }
+    for(int i = 0; i < numbOfValues; i++)
+    {
+        helpArray[i]->hideValue();
     }
     handleStep();
 }
