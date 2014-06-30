@@ -2,6 +2,7 @@
 #include "algorithm.h"
 #include <stack>
 
+
 class QuickSort :
 	public Algorithm
 {
