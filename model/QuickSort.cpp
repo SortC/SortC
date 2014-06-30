@@ -76,10 +76,10 @@ void QuickSort::sort(){
 
              rightIndex = rightIndexOfSubset;
 
-             steps.push_back(new Step(leftIndex, 0,Step::LEFTINDEX,++numbOfSteps));
+             //steps.push_back(new Step(leftIndex, 0,Step::LEFTINDEX,++numbOfSteps));
              steps.push_back(new Step(pivotIndex, 0 , Step::PIVOT, ++numbOfSteps));
-             steps.push_back(new Step(rightIndex, 0,Step::RIGHTINDEX,++numbOfSteps ));
-
+             //steps.push_back(new Step(rightIndex, 0,Step::RIGHTINDEX,++numbOfSteps ));
+            steps.push_back(new Step(leftIndex, rightIndex , Step::MARK, ++numbOfSteps));
              pivot = this->currentTuple[pivotIndex];
 
              if (leftIndex > rightIndex)
