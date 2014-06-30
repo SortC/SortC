@@ -73,8 +73,6 @@ void QuickSortWidget::handleStep()
         }
     }
     catch (exception e) {
-        int i = 0;
-
     }
 
 
