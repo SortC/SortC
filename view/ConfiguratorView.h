@@ -11,7 +11,8 @@
 
 #include <iostream>
 
-const int maxValue = 100;
+const int maxRandomValue = 100;
+const int maxNumbOfValues = 35;
 
 namespace Ui {
 class ConfiguratorView;
@@ -36,7 +37,7 @@ private slots:
 
     void on_radioButtonOwnValues_toggled(bool checked);
 
-    void newOwnTuple(int* ownTuple);
+    void newOwnTuple();
 
     void on_valueSlider_valueChanged(int value);
 
@@ -47,6 +48,7 @@ private:
     static int count;
     int numberOfValues;
     int* ownTuple;
+    bool ownValuesValid;
 };
 
 #endif // CONFIGURATORVIEW_H

@@ -10,7 +10,12 @@ ConfiguratorView::ConfiguratorView(QWidget *parent) :
 {
     ui->setupUi(this);
     this->numberOfValues = ui->valueSlider->value();
+    this->ownTuple = new int[maxNumbOfValues];
+    for (int i = 0; i < maxNumbOfValues; i++){
+        this->ownTuple[i] = 1;
+    }
 
+    this->ownValuesValid = false;
 }
 
 ConfiguratorView::~ConfiguratorView()
@@ -25,41 +30,43 @@ void ConfiguratorView::decrementCount()
 
 void ConfiguratorView::on_startBtn_clicked()
 {
-    int anzWerte = ui->valueSlider->value();
-
-    int zahlen[anzWerte];
-
-    QString itemText = ui->sortDierectionComboBox->currentText();
-
-    if (itemText.compare(ui->sortDierectionComboBox->itemText(1)) && ui->sortCheckBox->isChecked())
+    int values[numberOfValues];
+    if ( ui->radioButtonOwnValues->isChecked() )
     {
-        for (int i = 0; i < anzWerte; i++)
+        for(int i = 0; i < numberOfValues; i++)
         {
-            zahlen[i] = i + 1;
+            values[i] = ownTuple[i];
         }
     }
-    else if (itemText.compare(ui->sortDierectionComboBox->itemText(2)) && ui->sortCheckBox->isChecked())
+    else if ((ui->sortDierectionComboBox->currentIndex() == 0) && ui->sortCheckBox->isChecked())
     {
-        for (int i = 0; i < anzWerte; i++)
+        for (int i = 0; i < numberOfValues; i++)
         {
-            zahlen[i] = anzWerte - i;
+            values[i] = i + 1;
+        }
+    }
+    else if ((ui->sortDierectionComboBox->currentIndex() == 1) && ui->sortCheckBox->isChecked())
+    {
+        for (int i = 0; i < numberOfValues; i++)
+        {
+            values[i] = numberOfValues - i;
         }
     }
     else
     {
         srand(time(NULL));
-        for (int i = 0; i < anzWerte; i++)
+        for (int i = 0; i < numberOfValues; i++)
         {
-            zahlen[i] = (rand() % maxValue) + 1;
+            values[i] = (rand() % maxRandomValue) + 1;
         }
     }
 
     if (count >= 2)
     {
-        QMessageBox::information(this, tr("Fehler"), tr("Es können nur maximal zwei Sortierfenster gestartet werden"));
+        QMessageBox::information(this, tr("Fehler"), tr("Es können nur maximal zwei Sortierfenster gleichzeitig gestartet werden"));
     }
     else{
-        SortView* sortView = new SortView(0, zahlen , anzWerte);
+        SortView* sortView = new SortView(0, values , numberOfValues);
         sortView->show();
         sortViewtab[count] = sortView;
         count++;
@@ -69,10 +76,11 @@ void ConfiguratorView::on_startBtn_clicked()
 
 void ConfiguratorView::on_btnOwnValues_clicked()
 {
-    int anzValues = ui->valueSlider->value();
+    int numberOfValues = ui->valueSlider->value();
 
-    otv = new OwnTupleView(this, anzValues);
+    otv = new OwnTupleView(this, ownTuple, numberOfValues);
     otv->show();
+    this->hide();
 }
 
 void ConfiguratorView::on_radioButtonRandomValues_toggled(bool checked)
@@ -97,17 +105,14 @@ void ConfiguratorView::on_radioButtonOwnValues_toggled(bool checked)
     }
 }
 
-void ConfiguratorView::newOwnTuple(int *ownTuple)
+void ConfiguratorView::newOwnTuple()
 {
-    this->ownTuple = ownTuple;
-
-    for(int i = 0; i<numberOfValues; i++){
-        std::cout << this->ownTuple[i] <<", ";
-    }
-    std::cout << std::endl;
+    ownValuesValid = true;
+    ui->startBtn->setEnabled(true);
 }
 
 void ConfiguratorView::on_valueSlider_valueChanged(int value)
 {
     this->numberOfValues = value;
+    ownValuesValid = false;
 }

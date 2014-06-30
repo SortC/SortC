@@ -2,9 +2,14 @@
 #define OWNTUPLEVIEW_H
 
 #include <QMainWindow>
-#include <qspinbox.h>
-#include <qlabel.h>
+#include <QSpinBox>
+#include <QLabel>
+#include <QCloseEvent>
+
 #include "ui_OwnTupleView.h"
+
+const int maxValue = 999;
+const int minValue = 1;
 
 namespace Ui {
 class OwnTupleView;
@@ -15,11 +20,13 @@ class OwnTupleView : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit OwnTupleView(QWidget *parent = 0, int numbOfValues = 0);
+    explicit OwnTupleView(QWidget *parent = 0, int* ownTuple = NULL, int numbOfValues = 0);
     ~OwnTupleView();
 
+    void closeEvent(QCloseEvent *event);
+
 signals:
-    void ownTupleCreated(int* i);
+    void ownTupleUpdated();
 
 private slots:
     void on_btnFinish_clicked();

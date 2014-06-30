@@ -1,7 +1,7 @@
 #include "OwnTupleView.h"
 #include "ui_OwnTupleView.h"
 
-OwnTupleView::OwnTupleView(QWidget *parent, int numbOfValues) :
+OwnTupleView::OwnTupleView(QWidget *parent, int* ownTuple, int numbOfValues) :
     QMainWindow(parent),
     ui(new Ui::OwnTupleView)
 {
@@ -27,9 +27,9 @@ OwnTupleView::OwnTupleView(QWidget *parent, int numbOfValues) :
 
     for(int i = 0; i < numbOfElements; i++){
         QSpinBox *sbox = new QSpinBox(this);
-        sbox->setMaximum(99);
-        sbox->setMinimum(1);
-        sbox->setValue(1);
+        sbox->setMaximum(maxValue);
+        sbox->setMinimum(minValue);
+        sbox->setValue(ownTuple[i]);
         valueBoxes[i] = sbox;
 
         QLabel *lbl = new QLabel(this);
@@ -53,9 +53,9 @@ OwnTupleView::OwnTupleView(QWidget *parent, int numbOfValues) :
             ui->horizontalLayoutLabels->addWidget(lbl);
         }
     }
-    ownTuple = new int[numbOfValues];
+    this->ownTuple = ownTuple;
     this->parent = parent;
-    connect(this, SIGNAL(ownTupleCreated(int*)), parent, SLOT(newOwnTuple(int*)));
+    connect(this, SIGNAL(ownTupleUpdated()), parent, SLOT(newOwnTuple()));
 }
 
 OwnTupleView::~OwnTupleView()
@@ -68,7 +68,13 @@ void OwnTupleView::on_btnFinish_clicked()
     for(int i = 0; i < numbOfValues; i++){
         ownTuple[i] = valueBoxes[i]->value();
     }
-    emit ownTupleCreated(ownTuple);
+    emit ownTupleUpdated();
+    this->close();
 }
 
+void OwnTupleView::closeEvent(QCloseEvent *event)
+{
+    parentWidget()->show();
+    event->accept();
+}
 
