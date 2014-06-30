@@ -8,9 +8,6 @@
 #include <cstdlib>
 #include <time.h>
 
-
-#include <iostream>
-
 const int maxRandomValue = 100;
 const int maxNumbOfValues = 35;
 

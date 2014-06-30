@@ -200,6 +200,9 @@
       <property name="text">
        <string>Simulation starten</string>
       </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
      </widget>
     </item>
    </layout>

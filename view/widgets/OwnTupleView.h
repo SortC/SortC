@@ -8,7 +8,7 @@
 
 #include "ui_OwnTupleView.h"
 
-const int maxValue = 999;
+const int maxValue = 100;
 const int minValue = 1;
 
 namespace Ui {
