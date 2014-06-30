@@ -14,7 +14,7 @@ class SortValue : public QWidget
     Q_OBJECT
 
 public:
-    enum Action {NONE, COMP, SWAP, MARK, MIN, PIVOT, CPY, R_CPY};
+    enum Action {NONE, COMP, RIGHTINDEX, LEFTINDEX, SWAP, MARK, MIN, PIVOT, CPY, R_CPY};
     explicit SortValue(QWidget *parent = 0, int value = 0, int maxValue = 100, int arrayIndex = 0);
     ~SortValue();
 

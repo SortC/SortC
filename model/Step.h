@@ -11,7 +11,7 @@ using namespace std;
 class Step
 {
 public:
-    enum Operation {SWAP, COMP, MARK, PIVOT, CPY, R_CPY, MIN, END};
+    enum Operation {SWAP, COMP, RIGHTINDEX, LEFTINDEX, MARK, PIVOT, CPY, R_CPY, MIN, END};
     Step(int firstValue, int secondValue, Operation operation, unsigned int number, string explanation);
 
 	Step(int firstValue, int secondValue, Operation operation, unsigned int number);

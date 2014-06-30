@@ -56,9 +56,16 @@ void SortValue::setAction(Action action)
         case CPY:
             styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #e3a8f2, stop: 0.5 #c000f0); border-style: outset; border-width: 0px; border-color: black; border-radius: 5px;";
             break;
+        case RIGHTINDEX:
+            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #f9d9d9, stop: 0.5 #fc6060); border-style: outset; border-width: 0px; border-color: black; border-radius: 5px;";
+            break;
+        case LEFTINDEX:
+            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #e3a8f2, stop: 0.5 #c000f0); border-style: outset; border-width: 0px; border-color: black; border-radius: 5px;";
+            break;
         case R_CPY:
             styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #f4f8cd, stop: 0.5 #eaff00); border-style: outset; border-width: 0px; border-color: black; border-radius: 5px;";
             break;
+
         }
         currentAction = action;
         if(valueVisible){

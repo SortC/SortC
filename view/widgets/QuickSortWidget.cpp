@@ -56,6 +56,12 @@ void QuickSortWidget::handleStep()
         case Step::PIVOT:
             displayValues[val1]->setAction(SortValue::PIVOT);
             break;
+        case Step::RIGHTINDEX:
+            displayValues[val1]->setAction(SortValue::RIGHTINDEX);
+            break;
+        case Step::LEFTINDEX:
+            displayValues[val1]->setAction(SortValue::LEFTINDEX );
+            break;
         case Step::END:
             ui->btnPlayPause->setChecked(false);
             ui->btnNextStep->setEnabled(false);

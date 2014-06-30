@@ -62,14 +62,23 @@ void QuickSort::sort(){
          while (stack.size() > 0)
          {
 
+
              rightIndexOfSubset = stack.top() ;
              stack.pop();//pop always with right and left
+
              leftIndexOfSubSet = stack.top() ;
              stack.pop();
 
+
              leftIndex = leftIndexOfSubSet + 1;
+
              pivotIndex = leftIndexOfSubSet;
+
              rightIndex = rightIndexOfSubset;
+
+             steps.push_back(new Step(leftIndex, 0,Step::LEFTINDEX,++numbOfSteps));
+             steps.push_back(new Step(pivotIndex, 0 , Step::PIVOT, ++numbOfSteps));
+             steps.push_back(new Step(rightIndex, 0,Step::RIGHTINDEX,++numbOfSteps ));
 
              pivot = this->currentTuple[pivotIndex];
 
@@ -78,9 +87,14 @@ void QuickSort::sort(){
 
              while (leftIndex < rightIndex)
              {
-                 steps.push_back(new Step(leftIndex, rightIndex,Step::COMP,++numbOfSteps, buffer.str() ));
-                 while ((leftIndex <= rightIndex) && (this->currentTuple[leftIndex] <= pivot))
+
+                 while ((leftIndex <= rightIndex) && (this->currentTuple[leftIndex] <= pivot)){
+                     stringstream buffer;
+                     buffer << "Pruefe ob linker Zeiger [" << leftIndex <<"] <= rechter Zeiger ["<< rightIndex << "]" ;
+                     steps.push_back(new Step(leftIndex, rightIndex,Step::COMP,++numbOfSteps, buffer.str() ));
+
                      leftIndex++;	//increment right to find the greater
+                 }
              //element than the pivot
 
                  while ((leftIndex <= rightIndex) && (this->currentTuple[rightIndex] >= pivot))

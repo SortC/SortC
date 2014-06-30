@@ -42,6 +42,10 @@ string Step::toString(){
 			break;
         case END: buffer << "Fertig Sortiert";
             break;
+        case RIGHTINDEX: buffer << setw(lengthOp) << left << "RIGHTINDEX" << setfill(filler) << setw(length) << left  <<"Setze rechten Zeiger auf" << "[" << firstValue << "]";
+            break;
+        case LEFTINDEX: buffer << setw(lengthOp) << left << "LEFTINDEX" << setfill(filler) << setw(length) << left  <<"Setze linken Zeiger auf" << "[" << firstValue << "]";
+            break;
 		default:
 			break;
 		}
