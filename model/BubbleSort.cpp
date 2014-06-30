@@ -1,5 +1,4 @@
 #include "BubbleSort.h"
-#include <iostream>
 
 BubbleSort::BubbleSort(int* values, int numbOfValues) : Algorithm(values,numbOfValues)
 {

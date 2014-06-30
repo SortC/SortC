@@ -1,6 +1,4 @@
 #include "Controller.h"
-#include <iostream>
-
 
 Controller::Controller(int *startTuple, int numbOfValues) {
     this->startTuple = new int[numbOfValues];
