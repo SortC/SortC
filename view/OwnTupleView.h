@@ -6,8 +6,6 @@
 #include <QLabel>
 #include <QCloseEvent>
 
-#include "ui_OwnTupleView.h"
-
 const int maxValue = 100;
 const int minValue = 1;
 
@@ -72,6 +70,7 @@ private:
     QWidget* parent;
     QSpinBox** valueBoxes; /**< Array der Spinboxes, je eine Spinbox pro Arraystelle*/
     QLabel** labels; /**< Labels zur Beschriftung der einzelnen Spinboxes*/
+    QWidget** placeHolderWidgets; /**< Platzhalter im Layout*/
     int numbOfValues; /**< Anzahl der Werte*/
     int * ownTuple; /**< Array der Werte*/
 };

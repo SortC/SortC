@@ -2,9 +2,7 @@
 #define SORTWIDGET_H
 
 #include <QWidget>
-#include <QFrame>
 #include <QTimer>
-#include <QThread>
 #include <QDesktopServices>
 #include <QUrl>
 #include "controller/AlgorithmController.h"

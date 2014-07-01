@@ -10,7 +10,7 @@
 #include "model/HeapSort.h"
 #include "model/BucketSort.h"
 #include <cstdlib>
-#include <time.h>
+
 /**
  * @brief The Controller class
  * Diese Klasse stellt alle Sortierverfahren zur Verfügung. Dabei ist sie lediglich

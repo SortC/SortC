@@ -10,40 +10,6 @@ QuickSort::QuickSort(int numberOfValues) : Algorithm(numberOfValues)
 {
 }
 
-//void QuickSort::sort(){
-//	int left = 0;
-//	int right = numbOfValues-1;
-
-//	if(left >= right)
-//		return; // Invalid index range
-
-//	vector<std::pair<int, int> > list;
-//	list.push_back(pair<int, int>(left, right));
-
-//	while(list.size() != 0)
-//	{
-//		left = list.back().first;
-//		right = list.back().second;
-//		list.pop_back();
-
-//        steps.push_back(new Step(left,right,Step::MARK,++numbOfSteps));
-//		int pivot = partition(currentTuple, left, right);
-//     //   steps.push_back(new Step(pivot,0,Step::PIVOT,++numbOfSteps));
-
-//        //stringstream buffer;
-//        //buffer << "Pruefe ob Pivot   [" << pivot <<"] > "<< 1 ;
-//        steps.push_back(new Step(pivot,1,Step::COMP, ++numbOfSteps/*, buffer.str()*/ ));
-//		if(pivot > 1)
-//			list.push_back(std::pair<int, int>(left, pivot - 1));
-
-//        //buffer << "Pruefe ob Pivot   [" << pivot + 1 <<"] > "<< 1 ;
-//  //      steps.push_back(new Step(pivot + 1, right ,Step::COMP, ++numbOfSteps/*, buffer.str()*/ ));
-//		if(pivot + 1 < right)
-//			list.push_back(std::pair<int, int>(pivot + 1, right));
-//	}
-//    steps.push_back(new Step(0,0,Step::END,++numbOfSteps));
-//}
-
 void QuickSort::sort(){
          //System.Collections.Stack stack = new System.Collections.Stack();
 

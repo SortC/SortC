@@ -1,6 +1,4 @@
 #include "BucketSort.h"
-#include <iostream>
-
 
 using namespace std;
 
@@ -63,8 +61,7 @@ void BucketSort::sort()
 	{
 		if (buckets[i].size() == 1) {
 			currentTuple[outputidx++] = buckets[i].front();
-			//cout << buckets[i]->front() << " | ";
-			buckets[i].pop();
+            buckets[i].pop();
 		}
 		if (buckets[i].size() > 1)
 		{
@@ -72,11 +69,9 @@ void BucketSort::sort()
 			{
 				currentTuple[outputidx] = buckets[i].front();
 				doInsertionSortForBucket(currentTuple, outputidx);
-				//cout << buckets[i]->front() << " ";
-				buckets[i].pop();
+                buckets[i].pop();
 				outputidx++;
 			}
-			//cout << "| ";
 		}
 	}
 

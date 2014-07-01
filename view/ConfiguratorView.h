@@ -2,11 +2,10 @@
 #define CONFIGURATORVIEW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
+#include <cstdlib>
 #include "SortView.h"
 #include "OwnTupleView.h"
-#include <qmessagebox.h>
-#include <cstdlib>
-#include <time.h>
 
 const int maxRandomValue = 100;
 const int maxNumbOfValues = 35;

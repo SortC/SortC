@@ -1,5 +1,4 @@
 #include "SortView.h"
-#include "ui_SortView.h"
 #include "ConfiguratorView.h"
 
 SortView::SortView(QWidget *parent, int* startTuple, int numbOfValues) :

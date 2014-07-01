@@ -23,7 +23,9 @@ OwnTupleView::OwnTupleView(QWidget *parent, int* ownTuple, int numbOfValues) :
             //numbOfElements = numbOfElementsPerLine * 2;
         }
     }
-
+    this->placeHolderWidgets = new QWidget*[2];
+    placeHolderWidgets[0] = NULL;
+    placeHolderWidgets[1] = NULL;
     for(int i = 0; i < numbOfValues; i++){
         QSpinBox *sbox = new QSpinBox(this);
         sbox->setMaximum(maxValue);
@@ -38,15 +40,15 @@ OwnTupleView::OwnTupleView(QWidget *parent, int* ownTuple, int numbOfValues) :
         labels[i]= lbl;
 
         if(i >= numbOfElementsPerLine) { // 2. Zeile einführen
-            if(!isNumbEven && i == numbOfValues -1 ) {  // dann letztes Element unsichtbar
-                //sbox->setEnabled(false);
-                //lbl->setEnabled(false);
-
+            if(!isNumbEven && i == numbOfValues -1 ) {
                 ui->horizontalLayoutValues2->addWidget(sbox);
                 ui->horizontalLayoutLabels2->addWidget(lbl);
 
-                ui->horizontalLayoutValues2->addWidget(new QWidget(this));
-                ui->horizontalLayoutLabels2->addWidget(new QWidget(this));
+                //Platzhalter im Layout
+                placeHolderWidgets[0] = new QWidget(this);
+                placeHolderWidgets[1] = new QWidget(this);
+                ui->horizontalLayoutValues2->addWidget(placeHolderWidgets[0]);
+                ui->horizontalLayoutLabels2->addWidget(placeHolderWidgets[1]);
             }
             else{
                 ui->horizontalLayoutValues2->addWidget(sbox);
@@ -72,6 +74,8 @@ OwnTupleView::~OwnTupleView()
         delete labels[i];
         delete valueBoxes[i];
     }
+    delete placeHolderWidgets[0];
+    delete placeHolderWidgets[1];
     delete ui;
 }
 

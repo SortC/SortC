@@ -1,4 +1,5 @@
 #pragma once
+
 #include "algorithm.h"
 #include <queue>
 
@@ -10,7 +11,7 @@ public:
 	BucketSort(int numbOfValues);
 	~BucketSort(void);
     void sort();
-	queue<int>* getFilledBuckets(){return filledBuckets;};
+    queue<int>* getFilledBuckets(){return filledBuckets;}
 protected:
 	int hash(int n);
 	void doInsertionSortForBucket(int* input, int len);

@@ -1,5 +1,7 @@
 #pragma once
+
 #include "algorithm.h"
+
 class SelectionSort :
 	public Algorithm
 {

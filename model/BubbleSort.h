@@ -1,5 +1,6 @@
 #pragma once
 #include "algorithm.h"
+
 class BubbleSort :
 	public Algorithm
 {
@@ -9,4 +10,3 @@ public:
 	~BubbleSort(void);
     void sort();
 };
-

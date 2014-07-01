@@ -2,7 +2,6 @@
 #define SORTVIEW_H
 
 #include <QMainWindow>
-#include <QHBoxLayout>
 #include <QCloseEvent>
 #include <QString>
 #include "ui_SortView.h"

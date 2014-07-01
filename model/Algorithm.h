@@ -2,10 +2,9 @@
 
 #include <string>
 #include <vector>
-//#include <random>
 #include <cstdlib>
 #include <time.h>
-#include "Step.h"
+#include "model/Step.h"
 
 using namespace std;
 class Algorithm
