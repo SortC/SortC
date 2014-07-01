@@ -13,13 +13,19 @@
 #include "view/widgets/MergeSortWidget.h"
 #include "view/widgets/QuickSortWidget.h"
 
-//toDo entfernen, wird nur als dummy benutzt
+//Wird als Platzhalter fuer noch nicht implementierte SortWidgets benutzt
 #include "view/widgets/EmptySortWidget.h"
 
 namespace Ui {
 class SortView;
 }
 
+/**
+ * @brief The SortView class
+ *
+ * Basis des Sortierfensters. Liefert ein Fenster mit einem leeren Tabview.
+ * In diesen werden dann die einzelnen SortWidgets eingefuegt.
+ */
 class SortView : public QMainWindow
 {
     Q_OBJECT
@@ -44,32 +50,39 @@ public:
     /**
      * @brief closeEvent
      *
-     *
+     * Wird beim Schliessen des SortView aufgerufen, reduziert den SortViewCounter des ConfiguratorViews
      *
      * @param event
      */
     void closeEvent(QCloseEvent *event);
 private slots:
+
+    /**
+     * @brief on_tabWidget_currentChanged
+     *
+     * wird beim wechseln des Tabs aufgerufen, zum stoppen des autoplays
+     */
     void on_tabWidget_currentChanged();
 
 private:
     /**
      * @brief createTabs
      *
-     * Erstellt Tabs
+     * Erstellt Tabsobjekte (Konkrete Kindobjekte der Klasse BaseSortWidget)
      */
     void createTabs();
 
     /**
      * @brief addTabs
      *
-     * Fuegt erstellte Tabs in den Tabview ein
+     * Fuegt erstellte Tabsobjekte in den Tabview ein
      */
     void addTabs();
 
     Controller *controller; /**< Pointer auf den allgemeinen Controller */
     Ui::SortView *ui;       /**< Pointer auf die SortUI */
 
+    /**< Pointer auf die einzelnen SortWidgets/Tabs */
     BubbleSortWidget* bsWidget;
     InsertionSortWidget* isWidget;
     SelectionSortWidget* ssWidget;
@@ -78,6 +91,7 @@ private:
     EmptySortWidget* hsWidget;
     EmptySortWidget* bucksWidget;
 
+    /**< Anfangstupel und Anzahl der Werte*/
     int* startTuple;
     int numbOfValues;
 };
