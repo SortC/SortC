@@ -16,6 +16,7 @@ BaseSortWidget::BaseSortWidget(QWidget *parent, AlgorithmController* algoCtrl, i
     ui->setupUi(this);
     this->interval = ui->intervalSpeedSlider->value();
 
+    this->directionForward = true;
     this->url = QString("http://www.wikipedia.de");
 }
 
@@ -28,6 +29,10 @@ BaseSortWidget::~BaseSortWidget()
 
 void BaseSortWidget::on_btnNextStep_clicked()
 {
+    if(!directionForward){
+        handleStep();
+        directionForward = true;
+    }
     algoCtrl->setNextStep();
     if(!timer->isActive()){
         ui->btnPrevStep->setEnabled(true);
@@ -38,6 +43,10 @@ void BaseSortWidget::on_btnNextStep_clicked()
 
 void BaseSortWidget::on_btnPrevStep_clicked()
 {
+    if(directionForward){
+        handleStep();
+        directionForward = false;
+    }
     algoCtrl->setPrevStep();
     if(algoCtrl->getCurrentStep()->getNumber() == 1){
         ui->btnPrevStep->setEnabled(false);

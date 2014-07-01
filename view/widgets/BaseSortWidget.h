@@ -92,6 +92,7 @@ protected:
     int numbOfValues;
     int interval; /**< Zeit des Timerintervalls in ms */
     QString url;
+    bool directionForward;
 };
 
 #endif // BASESORTWIDGET_H
