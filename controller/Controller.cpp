@@ -36,4 +36,14 @@ Controller::Controller(int numbOfValues) {
     this->heapSortCtrl = new AlgorithmController(new HeapSort(startTuple,numbOfValues));
 }
 
+Controller::~Controller(){
+    delete bubbleSortCtrl;
+    delete selectionSortCtrl;
+    delete insertionSortCtrl;
+    delete mergeSortCtrl;
+    delete quickSortCtrl;
+    delete heapSortCtrl;
+    delete bucketSortCtrl;
 
+    delete startTuple;
+}

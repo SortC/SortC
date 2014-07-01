@@ -34,6 +34,8 @@ public:
      */
     Controller(int numbOfValues);
 
+    ~Controller();
+
     /**
      * @brief get*SortCtrl
      * Getter-Methoden der einzelnen AlgorithmController
