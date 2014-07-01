@@ -61,7 +61,7 @@ void ConfiguratorView::on_startBtn_clicked()
         }
     }
 
-    if (count >= 2)
+    if (count >= maxNumbOfOpenSortViews)
     {
         QMessageBox::information(this, tr("Fehler"), tr("Es können nur maximal zwei Sortierfenster gleichzeitig gestartet werden"));
     }

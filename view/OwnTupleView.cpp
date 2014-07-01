@@ -61,11 +61,17 @@ OwnTupleView::OwnTupleView(QWidget *parent, int* ownTuple, int numbOfValues) :
 
     this->ownTuple = ownTuple;
     this->parent = parent;
+
+    // Verbindet das ownTupleUpdated() signal mit dem newOwnTuple()-Slot des Elternobjekts
     connect(this, SIGNAL(ownTupleUpdated()), parent, SLOT(newOwnTuple()));
 }
 
 OwnTupleView::~OwnTupleView()
 {
+    for(int i = 0; i < numbOfValues; i++){
+        delete labels[i];
+        delete valueBoxes[i];
+    }
     delete ui;
 }
 
