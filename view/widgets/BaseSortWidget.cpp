@@ -30,8 +30,8 @@ BaseSortWidget::~BaseSortWidget()
 void BaseSortWidget::on_btnNextStep_clicked()
 {
     if(!directionForward){
-        handleStep();
         directionForward = true;
+        handleStep();
     }
     algoCtrl->setNextStep();
     if(!timer->isActive()){
@@ -44,8 +44,8 @@ void BaseSortWidget::on_btnNextStep_clicked()
 void BaseSortWidget::on_btnPrevStep_clicked()
 {
     if(directionForward){
-        handleStep();
         directionForward = false;
+        handleStep();
     }
     algoCtrl->setPrevStep();
     if(algoCtrl->getCurrentStep()->getNumber() == 1){

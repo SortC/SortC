@@ -74,16 +74,24 @@ void MergeSortWidget::handleStep()
     case Step::R_CPY:
         helpArray[val1]->setAction(SortValue::R_CPY);
         displayValues[val2]->setAction(SortValue::NONE);
-
-        displayValues[val2]->setValue(helpArray[val1]->getValue());
+        if(directionForward){
+            displayValues[val2]->setValue(helpArray[val1]->getValue());
+            helpArray[val1]->hideValue();
+        } else {
+            helpArray[val1]->setValue(displayValues[val2]->getValue());
+            helpArray[val1]->showValue();
+        }
         break;
     case Step::CPY:
         displayValues[val1]->setAction(SortValue::CPY);
         helpArray[val2]->setAction(SortValue::CPY);
-
-        helpArray[val2]->setValue(displayValues[val1]->getValue());
-        helpArray[val2]->showValue();
-
+        if(directionForward){
+            helpArray[val2]->setValue(displayValues[val1]->getValue());
+            helpArray[val2]->showValue();
+        } else {
+            displayValues[val1]->setValue(helpArray[val2]->getValue());
+            helpArray[val2]->hideValue();
+        }
         break;
     case Step::MARK:
         markedValues = val2-val1;
