@@ -27,7 +27,7 @@ SOURCES += main.cpp\
     controller/Controller.cpp \
     controller/AlgorithmController.cpp \
     view/ConfiguratorView.cpp \
-    view/widgets/OwnTupleView.cpp \
+    view/OwnTupleView.cpp \
     view/widgets/BaseSortWidget.cpp \
     view/widgets/BubbleSortWidget.cpp \
     view/widgets/EmptySortWidget.cpp \
@@ -52,7 +52,7 @@ HEADERS  += view/SortView.h \
     controller/Controller.h \
     controller/AlgorithmController.h \
     view/ConfiguratorView.h \
-    view/widgets/OwnTupleView.h \
+    view/OwnTupleView.h \
     view/widgets/BaseSortWidget.h \
     view/widgets/BubbleSortWidget.h \
     view/widgets/EmptySortWidget.h \
@@ -64,7 +64,7 @@ HEADERS  += view/SortView.h \
 
 FORMS    += view/SortView.ui \
     view/ConfiguratorView.ui \
-    view/widgets/OwnTupleView.ui \
+    view/OwnTupleView.ui \
     view/widgets/BaseSortWidget.ui \
     view/widgets/SortValue.ui
 
