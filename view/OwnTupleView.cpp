@@ -86,6 +86,7 @@ void OwnTupleView::on_btnFinish_clicked()
     }
     emit ownTupleUpdated();
     this->close();
+    deleteLater();
 }
 
 void OwnTupleView::closeEvent(QCloseEvent *event)
