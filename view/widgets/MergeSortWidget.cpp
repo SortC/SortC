@@ -25,8 +25,6 @@ MergeSortWidget::MergeSortWidget(QWidget *parent, AlgorithmController* algoCtrl,
         ui->horizontalLayout_4->addWidget(tempValues,0,Qt::AlignBottom);
 
         helpArray[i] = tempValues;
-        //helpArray[i]->setMaximumHeight(max);
-        //helpArray[i]->setStyleSheet("background-color: white");
         helpArray[i]->hideValue();
     }
 
@@ -63,14 +61,12 @@ void MergeSortWidget::handleStep()
             int i = 0;
             for(i = 0; i < markedValues; i++) {
                 displayValues[i]->setAction(SortValue::MARK);
-                helpArray[i]->setStyleSheet("background-color: white");
             }
         }
         else
         {
             for(int i = 0; i < numbOfValues; i++) {
                 displayValues[i]->setAction(SortValue::NONE);
-                helpArray[i]->setStyleSheet("background-color: white");
             }
         }
     }
@@ -80,8 +76,8 @@ void MergeSortWidget::handleStep()
 
     switch (algoCtrl->getCurrentStep()->getOperation()) {
     case Step::COMP:
-        helpArray[val1]->setStyleSheet("background-color: white");
-        helpArray[val2]->setStyleSheet("background-color: white");
+        helpArray[val1]->hideValue();
+        helpArray[val2]->hideValue();
         displayValues[val1]->setAction(SortValue::COMP);
         displayValues[val2]->setAction(SortValue::COMP);
         break;
@@ -90,11 +86,10 @@ void MergeSortWidget::handleStep()
         displayValues[val2]->setAction(SortValue::NONE);
         if(directionForward){
             displayValues[val2]->setValue(helpArray[val1]->getValue());
-            //helpArray[val1]->hideValue();
         } else {
             helpArray[val1]->setValue(displayValues[val2]->getValue());
-            //helpArray[val2]->setAction(SortValue::NONE);
-            //helpArray[val1]->showValue();
+            helpArray[val1]->setAction(SortValue::R_CPY);
+            helpArray[val1]->showValue();
         }
         break;
     case Step::CPY:
@@ -102,28 +97,37 @@ void MergeSortWidget::handleStep()
         helpArray[val2]->setAction(SortValue::CPY);
         if(directionForward){
             helpArray[val2]->setValue(displayValues[val1]->getValue());
-            //helpArray[val2]->showValue();
+            helpArray[val2]->showValue();
         } else {
             displayValues[val1]->setValue(helpArray[val2]->getValue());
 
         }
         break;
     case Step::MARK:
-
         for (int j = 0; j < numbOfValues; j++)
         {
-            helpArray[j]->setStyleSheet("background-color: white");
+            helpArray[j]->hideValue();
         }
 
         markedValues = val2-val1;
 
-        for (int i = 0; i <= markedValues; i++)
-        {
-            displayValues[val1+i]->setAction(SortValue::MARK);
-            displayValues[val2]->setAction(SortValue::MARK);
-        }
         isMarked = true;
-
+        if(directionForward)
+        {
+            for (int i = 0; i <= markedValues; i++)
+            {
+                displayValues[val1+i]->setAction(SortValue::MARK);
+                displayValues[val2]->setAction(SortValue::MARK);
+            }
+            isMarked = true;
+        }
+        else{
+            for (int i = 0; i <= markedValues; i++)
+            {
+                displayValues[val1+i]->setAction(SortValue::NONE);
+                displayValues[val2]->setAction(SortValue::NONE);
+            }
+        }
         break;
     case Step::END:
         ui->btnPlayPause->setChecked(false);
@@ -133,6 +137,7 @@ void MergeSortWidget::handleStep()
         {
             displayValues[val1]->setAction(SortValue::NONE);
             displayValues[val1+i]->setAction(SortValue::NONE);
+            helpArray[i]->setAction(SortValue::NONE);
         }
     default:
         break;
@@ -155,8 +160,6 @@ void MergeSortWidget::on_btnReset_clicked(){
 
     for(int i = 0; i < numbOfValues; i++){
         helpArray[i]->setValue(max);
-        helpArray[i]->setStyleSheet("background-color: white");
-        //helpArray[i]->setAction(SortValue::NONE);
     }
     handleStep();
 }

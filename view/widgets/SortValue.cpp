@@ -36,34 +36,34 @@ void SortValue::setAction(Action action)
         switch (action)
         {
         case NONE:
-            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ebf4fd, stop: 0.5 #bed2e6); border-style: outset; border-width: 0px; border-color: black; border-radius: 5px;";
+            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ebf4fd, stop: 0.5 #bed2e6); border-style: outset; border-width: 1px; border-color: grey; border-radius: 5px;";
             break;
         case COMP:
-            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #c0c7f9, stop: 0.5 #697dfa); border-style: outset; border-width: 0px; border-color: black; border-radius: 5px;";
+            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #c0c7f9, stop: 0.5 #697dfa); border-style: outset; border-width: 1px; border-color: grey; border-radius: 5px;";
             break;
         case SWAP:
-            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #d4f8d0, stop: 0.5 #75ff69); border-style: outset; border-width: 0px; border-color: black; border-radius: 5px;";
+            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #d4f8d0, stop: 0.5 #75ff69); border-style: outset; border-width: 1px; border-color: grey; border-radius: 5px;";
             break;
         case MARK:
-            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #f9f6ea, stop: 0.5 #ede2c0); border-style: outset; border-width: 0px; border-color: black; border-radius: 5px;";
+            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #f9f6ea, stop: 0.5 #ede2c0); border-style: outset; border-width: 1px; border-color: grey; border-radius: 5px;";
             break;
         case MIN:
-            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #f9d9d9, stop: 0.5 #fc6060); border-style: outset; border-width: 0px; border-color: black; border-radius: 5px;";
+            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #f9d9d9, stop: 0.5 #fc6060); border-style: outset; border-width: 1px; border-color: grey; border-radius: 5px;";
             break;
         case PIVOT:
-            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #f9d9d9, stop: 0.5 #fc6060); border-style: outset; border-width: 0px; border-color: black; border-radius: 5px;";
+            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #f9d9d9, stop: 0.5 #fc6060); border-style: outset; border-width: 1px; border-color: grey; border-radius: 5px;";
             break;
         case CPY:
-            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #e3a8f2, stop: 0.5 #c000f0); border-style: outset; border-width: 0px; border-color: black; border-radius: 5px;";
+            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #e3a8f2, stop: 0.5 #c000f0); border-style: outset; border-width: 1px; border-color: grey; border-radius: 5px;";
             break;
         case RIGHTINDEX:
-            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #f9d9d9, stop: 0.5 #fc6060); border-style: outset; border-width: 0px; border-color: black; border-radius: 5px;";
+            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #f9d9d9, stop: 0.5 #fc6060); border-style: outset; border-width: 1px; border-color: grey; border-radius: 5px;";
             break;
         case LEFTINDEX:
-            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #e3a8f2, stop: 0.5 #c000f0); border-style: outset; border-width: 0px; border-color: black; border-radius: 5px;";
+            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #e3a8f2, stop: 0.5 #c000f0); border-style: outset; border-width: 1px; border-color: grey; border-radius: 5px;";
             break;
         case R_CPY:
-            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #f4f8cd, stop: 0.5 #eaff00); border-style: outset; border-width: 0px; border-color: black; border-radius: 5px;";
+            styleSheetBuffer = "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #f4f8cd, stop: 0.5 #eaff00); border-style: outset; border-width: 1px; border-color: grey; border-radius: 5px;";
             break;
 
         }
