@@ -89,8 +89,8 @@
         <property name="styleSheet">
          <string notr="true">background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ebf4fd, stop: 0.5 #bed2e6);
 border-style: outset;
-border-width: 0px;
-border-color: black;
+border-width: 1px;
+border-color: grey;
 border-radius: 5px;</string>
         </property>
         <property name="frameShape">

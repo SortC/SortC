@@ -53,12 +53,14 @@ void MergeSortWidget::handleStep()
             int i = 0;
             for(i = 0; i < markedValues; i++) {
                 displayValues[i]->setAction(SortValue::MARK);
+                helpArray[i]->setStyleSheet("background-color: white");
             }
         }
         else
         {
             for(int i = 0; i < numbOfValues; i++) {
                 displayValues[i]->setAction(SortValue::NONE);
+                helpArray[i]->setStyleSheet("background-color: white");
             }
         }
     }
@@ -68,8 +70,8 @@ void MergeSortWidget::handleStep()
 
     switch (algoCtrl->getCurrentStep()->getOperation()) {
     case Step::COMP:
-        helpArray[val1]->setAction(SortValue::NONE);
-        helpArray[val2]->setAction(SortValue::NONE);
+        helpArray[val1]->setStyleSheet("background-color: white");
+        helpArray[val2]->setStyleSheet("background-color: white");
         displayValues[val1]->setAction(SortValue::COMP);
         displayValues[val2]->setAction(SortValue::COMP);
         break;
@@ -100,7 +102,7 @@ void MergeSortWidget::handleStep()
 
         for (int j = 0; j < numbOfValues; j++)
         {
-            helpArray[j]->setAction(SortValue::NONE);
+            helpArray[j]->setStyleSheet("background-color: white");
         }
 
         markedValues = val2-val1;
