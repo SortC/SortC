@@ -20,6 +20,7 @@ public:
      */
     explicit QuickSortWidget(QWidget *parent = 0, AlgorithmController* algoCtrl = NULL, int* startTuple = NULL , int numbOfValues = 0);
 
+    ~QuickSortWidget();
 signals:
 
 public slots:

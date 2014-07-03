@@ -24,6 +24,10 @@ public:
      */
     explicit EmptySortWidget(QWidget *parent = 0, AlgorithmController* algoCtrl = NULL, int* startTuple = NULL , int numbOfValues = 0);
 
+    /**
+      * Dekonstruktor
+      */
+    ~EmptySortWidget();
 signals:
 
 public slots:
@@ -37,6 +41,7 @@ private:
      */
     void handleStep();
 
+    QLabel* imageContainer;
 };
 
 #endif // EMPTYSORTWIDGET_H

@@ -24,6 +24,13 @@ InsertionSortWidget::InsertionSortWidget(QWidget *parent, AlgorithmController* a
     handleStep();
 }
 
+InsertionSortWidget::~InsertionSortWidget(){
+    for(int i = 0; i < numbOfValues; i++)
+    {
+        delete displayValues[i];
+    }
+}
+
 void InsertionSortWidget::handleStep()
 {
     BaseSortWidget::handleStep();

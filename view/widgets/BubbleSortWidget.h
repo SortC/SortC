@@ -20,6 +20,10 @@ public:
      */
     explicit BubbleSortWidget(QWidget *parent = 0, AlgorithmController* algoCtrl = NULL, int* startTuple = NULL , int numbOfValues = 0);
 
+    /**
+      * Dekonstruktor
+      */
+    ~BubbleSortWidget();
 signals:
 
 public slots:

@@ -20,6 +20,10 @@ public:
      */
     explicit InsertionSortWidget(QWidget *parent = 0, AlgorithmController* algoCtrl = NULL, int* startTuple = NULL , int numbOfValues = 0);
 
+    /**
+      * Dekonstruktor
+      */
+    ~InsertionSortWidget();
 signals:
 
 public slots:

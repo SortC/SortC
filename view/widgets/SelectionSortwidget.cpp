@@ -23,6 +23,12 @@ SelectionSortWidget::SelectionSortWidget(QWidget *parent, AlgorithmController* a
     handleStep();
 }
 
+SelectionSortWidget::~SelectionSortWidget(){
+    for(int i = 0; i < numbOfValues; i++){
+        delete displayValues[i];
+    }
+}
+
 void SelectionSortWidget::handleStep()
 {
     BaseSortWidget::handleStep();

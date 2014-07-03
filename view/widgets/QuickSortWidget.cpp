@@ -21,6 +21,12 @@ QuickSortWidget::QuickSortWidget(QWidget *parent, AlgorithmController* algoCtrl,
     handleStep();
 }
 
+QuickSortWidget::~QuickSortWidget(){
+    for(int i = 0; i < numbOfValues; i++){
+        delete displayValues[i];
+    }
+}
+
 void QuickSortWidget::handleStep()
 {
     try {

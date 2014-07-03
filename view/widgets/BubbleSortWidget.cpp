@@ -21,6 +21,13 @@ BubbleSortWidget::BubbleSortWidget(QWidget *parent, AlgorithmController* algoCtr
     handleStep();
 }
 
+BubbleSortWidget::~BubbleSortWidget(){
+    for(int i = 0; i < numbOfValues; i++)
+    {
+        delete displayValues[i];
+    }
+}
+
 void BubbleSortWidget::handleStep(){
     BaseSortWidget::handleStep();
 

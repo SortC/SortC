@@ -20,6 +20,7 @@ public:
      */
     explicit SelectionSortWidget(QWidget *parent = 0, AlgorithmController* algoCtrl = NULL, int* startTuple = NULL , int numbOfValues = 0);
 
+    ~SelectionSortWidget();
 signals:
 
 public slots:

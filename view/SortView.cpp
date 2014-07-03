@@ -21,6 +21,7 @@ SortView::SortView(QWidget *parent, int* startTuple, int numbOfValues) :
 
 SortView::~SortView()
 {
+    ui->tabWidget->clear();
     delete bsWidget;
     delete isWidget;
     delete ssWidget;
@@ -36,6 +37,7 @@ void SortView::closeEvent(QCloseEvent *event)
         ConfiguratorView cV(0);
         cV.decrementCount();
         event->accept();
+        deleteLater();
 }
 
 void SortView::createTabs()
