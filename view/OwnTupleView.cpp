@@ -92,5 +92,6 @@ void OwnTupleView::closeEvent(QCloseEvent *event)
 {
     parentWidget()->show();
     event->accept();
+    deleteLater();
 }
 
