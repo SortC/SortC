@@ -26,12 +26,22 @@ MergeSortWidget::MergeSortWidget(QWidget *parent, AlgorithmController* algoCtrl,
 
         helpArray[i] = tempValues;
         //helpArray[i]->setMaximumHeight(max);
-        helpArray[i]->setStyleSheet("background-color: white");
+        //helpArray[i]->setStyleSheet("background-color: white");
+        helpArray[i]->hideValue();
     }
 
     this->url = QString("http://de.wikipedia.org/wiki/Mergesort");
 
     handleStep();
+}
+
+MergeSortWidget::~MergeSortWidget()
+{
+    for(int i = 0; i < numbOfValues; i++)
+    {
+        delete helpArray[i];
+        delete displayValues[i];
+    }
 }
 
 void MergeSortWidget::handleStep()
@@ -149,4 +159,12 @@ void MergeSortWidget::on_btnReset_clicked(){
         //helpArray[i]->setAction(SortValue::NONE);
     }
     handleStep();
+}
+
+void MergeSortWidget::resizeEvent(QResizeEvent* event){
+    int spacerHeight = (ui->frameSorting->height() - 24) /2;
+    ui->sortingSpacer->changeSize(0,spacerHeight,QSizePolicy::Fixed);
+    ui->helperSpacer->changeSize(0,spacerHeight,QSizePolicy::Fixed);
+
+    event->accept();
 }

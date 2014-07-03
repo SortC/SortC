@@ -1,6 +1,7 @@
 #ifndef MERGESORTWIDGET_H
 #define MERGESORTWIDGET_H
 
+#include <QResizeEvent>
 #include "view/widgets/BaseSortWidget.h"
 #include "view/widgets/SortValue.h"
 
@@ -20,6 +21,9 @@ public:
      */
     explicit MergeSortWidget(QWidget *parent = 0, AlgorithmController* algoCtrl = NULL, int* startTuple = NULL , int numbOfValues = 0);
 
+    ~MergeSortWidget();
+
+    void resizeEvent ( QResizeEvent * event );
 signals:
 
 public slots:

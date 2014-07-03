@@ -45,7 +45,7 @@ void QuickSort::sort(){
              //steps.push_back(new Step(leftIndex, 0,Step::LEFTINDEX,++numbOfSteps));
              steps.push_back(new Step(pivotIndex, 0 , Step::PIVOT, ++numbOfSteps));
              //steps.push_back(new Step(rightIndex, 0,Step::RIGHTINDEX,++numbOfSteps ));
-            steps.push_back(new Step(leftIndex, rightIndex , Step::MARK, ++numbOfSteps));
+            steps.push_back(new Step(leftIndex +1, rightIndex+1 , Step::MARK, ++numbOfSteps));
              pivot = this->currentTuple[pivotIndex];
 
              if (leftIndex > rightIndex)
@@ -54,7 +54,7 @@ void QuickSort::sort(){
              while (leftIndex < rightIndex)
              {
 
-                 while ((leftIndex <= rightIndex) && (this->currentTuple[leftIndex] <= pivot)){
+                 while ((leftIndex < rightIndex) && (this->currentTuple[leftIndex] <= pivot)){
                      stringstream buffer;
                      buffer << "Pruefe ob linker Zeiger [" << leftIndex <<"] <= rechter Zeiger ["<< rightIndex << "]" ;
                      steps.push_back(new Step(leftIndex, rightIndex,Step::COMP,++numbOfSteps, buffer.str() ));
