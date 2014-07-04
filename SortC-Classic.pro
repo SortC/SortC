@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = SortC-Classic
+TARGET = SortC
 TEMPLATE = app
 
 
@@ -70,3 +70,5 @@ FORMS    += view/SortView.ui \
 
 RESOURCES += \
     SortC-resources.qrc
+
+win32:RC_FILE = win_icon.rc
