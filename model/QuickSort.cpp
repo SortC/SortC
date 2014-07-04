@@ -10,6 +10,10 @@ QuickSort::QuickSort(int numberOfValues) : Algorithm(numberOfValues)
 {
 }
 
+QuickSort::~QuickSort(){
+
+}
+
 void QuickSort::sort(){
          //System.Collections.Stack stack = new System.Collections.Stack();
 
