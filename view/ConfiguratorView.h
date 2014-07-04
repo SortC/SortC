@@ -32,6 +32,10 @@ public:
      * @param parent: Elternobjekt, in der Regel 0
      */
     explicit ConfiguratorView(QWidget *parent = 0);
+
+    /**
+      * Dekonstruktor
+      */
     ~ConfiguratorView();
 
     /**

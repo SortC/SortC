@@ -7,47 +7,52 @@
 #include "model/Step.h"
 
 using namespace std;
+/**
+  * @brief The Algorithm class
+  *
+  * Abstrakte Basisklasse jedes Sortieralgorithmus. Standardisiert Basisfunktionen fuer die Bedienung.
+  */
 class Algorithm
 {
 public:
 
 	/**
-	* Konstruktor für voreingestellte Zahlenfolgen
-	* @param startTuple vordefiniertes Zahlentupel
-	*/
+     * Konstruktor fuer voreingestellte Zahlenfolgen
+     * @param startTuple vordefiniertes Zahlentupel
+     */
 	Algorithm(int* values, int numbOfValues);
 
 	/**
-	* Konstruktor für zufällige Zahlenfolge
-	* @param anzValues Anzahl zu sortierender Werte
-	*/
+     * Konstruktor fuer zufaellige Zahlenfolge
+     * @param anzValues Anzahl zu sortierender Werte
+     */
 	Algorithm(int numbOfValues);
 
 	/**
-	* Destruktor
-	*/
+     * Destruktor
+     */
     virtual ~Algorithm();
 
 	/** 
-	* Startet die Sortierung
-	*/
+     * Startet die Sortierung
+     */
 	void doSort();
 
 	/** 
-	* Gibt Pointer auf den nächsten Schritt aus der Sortierung zurück
-	* Gibt NULL zurück, fall kein nächster Schritt existiert
-	*/
+     * Gibt Pointer auf den naechsten Schritt aus der Sortierung zurueck
+     * Gibt NULL zurueck, fall kein naechster Schritt existiert
+     */
 	Step* getNextStep();
 
 	/** 
-	* Gibt Pointer auf den vorherigen Schritt aus der Sortierung zurück
-	* Gibt NULL zurück, fall kein vorheriger Schritt existiert
-	*/
+     * Gibt Pointer auf den vorherigen Schritt aus der Sortierung zurueck
+     * Gibt NULL zurueck, fall kein vorheriger Schritt existiert
+     */
 	Step* getPrevStep();
 
 	/**
-	* Getter-Funktionen
-	*/
+     * Getter-Funktionen
+     */
     int* getCurrentTuple(){ return currentTuple; }
     int* getStartTuple(){ return startTuple; }
     int getNumbOfCurrentStep(){ return numbOfCurrentStep; }
@@ -55,8 +60,15 @@ public:
     int getNumbOfValues(){ return numbOfValues; }
 
 protected:
+    /**
+      * @brief sort
+      *
+      * Kernfunktion der Klasse, sortiert das startTuple und fuellt steps mit den einzelnen Schritten.
+      * Muss in allen Unterklassen neu deklariert werden.
+      */
     virtual void sort() = 0;
-	int maxValue;
+
+    int maxValue;
 	bool isSorted;
 	int* startTuple;
 	int* currentTuple;

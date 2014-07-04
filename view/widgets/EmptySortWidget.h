@@ -31,6 +31,12 @@ public:
 signals:
 
 public slots:
+    /**
+     * @brief on_btnReset_clicked
+     *
+     * wirb beim klicken des btnReset ausgeloest.
+     * ruft on_btnReset_clicked() der Oberklasse (BaseSortWidget) auf.
+     */
     void on_btnReset_clicked();
 
 private:

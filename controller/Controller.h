@@ -34,6 +34,9 @@ public:
      */
     Controller(int numbOfValues);
 
+    /**
+      * Dekonstruktor
+      */
     ~Controller();
 
     /**

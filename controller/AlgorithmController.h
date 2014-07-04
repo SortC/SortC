@@ -11,12 +11,41 @@
 class AlgorithmController
 {
 public:
+    /**
+     * @brief AlgorithmController
+     *
+     * Konstruktor.
+     *
+     * @param algo : Pointer auf einen konkreten Sortieralgorithmus
+     */
     AlgorithmController(Algorithm* algo);
+
+    /**
+      * Dekonstruktor
+      */
     ~AlgorithmController();
 
+    /**
+     * @brief setNextStep
+     *
+     * extrahiert den naechsten Schritt aus dem Algorithmus und setzt ihn als currentStep
+     */
     void setNextStep();
+
+    /**
+     * @brief setPrevStep
+     *
+     * extrahiert den vorherigen Schritt aus dem Algorithmus und setzt ihn als currentStep
+     */
     void setPrevStep();
 
+    /**
+     * @brief getCurrentStep
+     *
+     * Gibt Pointer auf den derzeitigen Schritt zurueck
+     *
+     * @return Step*
+     */
     Step* getCurrentStep() const;
 
 private:
