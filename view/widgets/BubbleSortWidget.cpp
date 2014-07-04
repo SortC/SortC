@@ -26,6 +26,7 @@ BubbleSortWidget::~BubbleSortWidget(){
     {
         delete displayValues[i];
     }
+    delete displayValues;
 }
 
 void BubbleSortWidget::handleStep(){

@@ -29,6 +29,7 @@ InsertionSortWidget::~InsertionSortWidget(){
     {
         delete displayValues[i];
     }
+    delete displayValues;
 }
 
 void InsertionSortWidget::handleStep()

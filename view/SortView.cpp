@@ -29,6 +29,7 @@ SortView::~SortView()
     delete msWidget;
     delete hsWidget;
     delete bucksWidget;
+    delete controller;
     delete ui;
 }
 

@@ -25,6 +25,7 @@ QuickSortWidget::~QuickSortWidget(){
     for(int i = 0; i < numbOfValues; i++){
         delete displayValues[i];
     }
+    delete displayValues;
 }
 
 void QuickSortWidget::handleStep()

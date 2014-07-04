@@ -21,6 +21,7 @@ ConfiguratorView::ConfiguratorView(QWidget *parent) :
 ConfiguratorView::~ConfiguratorView()
 {
     delete ui;
+    delete ownTuple;
 }
 
 void ConfiguratorView::decrementCount()

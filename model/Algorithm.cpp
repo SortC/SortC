@@ -40,6 +40,8 @@ Algorithm::~Algorithm(void)
 	for(int i = 0; i < numbOfSteps; i++){
 		delete(steps[i]);
 	}
+    delete currentTuple;
+    delete startTuple;
 }
 
 void Algorithm::sort()

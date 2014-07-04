@@ -13,6 +13,7 @@ MergeSort::MergeSort(int numbOfValues):Algorithm(numbOfValues)
 
 MergeSort::~MergeSort(void)
 {
+    delete helperArray;
 }
 
 void MergeSort::sort(){

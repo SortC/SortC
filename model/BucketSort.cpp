@@ -16,8 +16,8 @@ BucketSort::BucketSort(int numbOfValues) : Algorithm(numbOfValues)
 
 BucketSort::~BucketSort(void)
 {
-	delete(buckets);
-	delete(filledBuckets);
+    delete buckets;
+    delete filledBuckets;
 }
 
 int BucketSort::hash(int n)

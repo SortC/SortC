@@ -74,8 +74,11 @@ OwnTupleView::~OwnTupleView()
         delete labels[i];
         delete valueBoxes[i];
     }
+    delete valueBoxes;
+    delete labels;
     delete placeHolderWidgets[0];
     delete placeHolderWidgets[1];
+    delete placeHolderWidgets;
     delete ui;
 }
 

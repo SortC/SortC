@@ -40,6 +40,8 @@ MergeSortWidget::~MergeSortWidget()
         delete helpArray[i];
         delete displayValues[i];
     }
+    delete helpArray;
+    delete displayValues;
 }
 
 void MergeSortWidget::handleStep()
