@@ -10,7 +10,7 @@ OwnTupleView::OwnTupleView(QWidget *parent, int* ownTuple, int numbOfValues) :
     valueBoxes = new QSpinBox*[numbOfValues];
     labels = new QLabel*[numbOfValues];
 
-    bool isNumbEven;
+    bool isNumbEven = false;
     int numbOfElementsPerLine = numbOfValues;
 
     if(numbOfValues > 17) {
